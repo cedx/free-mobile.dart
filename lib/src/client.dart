@@ -10,10 +10,10 @@ class Client {
   Client([this.username, this.password]);
 
   /// The stream of "request" events.
-  Stream<HttpRequest> get onRequest => _onRequest.stream;
+  Stream<http.Request> get onRequest => _onRequest.stream;
 
   /// The stream of "response" events.
-  Stream<HttpResponse> get onResponse => _onResponse.stream;
+  Stream<http.Response> get onResponse => _onResponse.stream;
 
   /// The identification key associated to the account.
   String password;
@@ -22,21 +22,30 @@ class Client {
   String username;
 
   /// The handler of "request" events.
-  StreamController<HttpRequest> _onRequest = new StreamController<HttpRequest>.broadcast();
+  StreamController<http.Request> _onRequest = new StreamController<http.Request>.broadcast();
 
   /// The handler of "response" events.
-  StreamController<HttpResponse> _onResponse = new StreamController<HttpResponse>.broadcast();
+  StreamController<http.Response> _onResponse = new StreamController<http.Response>.broadcast();
 
-  /**
-   * Sends a SMS message to the underlying account.
-   * @param {string} text The text of the message to send.
-   * @return {Observable<string>} The response as string.
-   * @emits {superagent.Request} The "request" event.
-   * @emits {superagent.Response} The "response" event.
-   */
-  sendMessage(text) {
-    // TODO
-    return null;
+  /// Sends a SMS message to the underlying account, and returns the response body.
+  Future<String> sendMessage(String text) async {
+    assert(text != null);
+    if (username == null || username.isEmpty) return new Future.error(new ArgumentError('The account username is empty.'));
+    if (password == null || password.isEmpty) return new Future.error(new ArgumentError('The account password is empty.'));
+
+    var message = text.trim();
+    if (message.isEmpty) return new Future.error(new ArgumentError('The specified message is empty.'));
+
+    var request = new http.Request('GET', endPoint.replace(queryParameters: {
+      'msg': message.substring(0, 160),
+      'pass': password,
+      'user': username
+    }));
+
+    _onRequest.add(request);
+    var response = await http.get(request.url);
+    _onResponse.add(response);
+    return response.body;
   }
 
   /// Converts this object to a map in JSON format.
