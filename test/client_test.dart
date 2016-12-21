@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:test/test.dart';
-import '../lib/freemobile.dart';
+import '../lib/free_mobile.dart';
 
 /// Tests the features of the `Client` class.
 void main() {

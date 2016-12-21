@@ -1,4 +1,4 @@
-part of freemobile;
+part of free_mobile;
 
 /// Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account.
 class Client {

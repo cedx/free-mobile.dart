@@ -1,5 +1,5 @@
-/// Send SMS messages to your Free Mobile account.
-library freemobile;
+/// Send SMS messages to your [Free Mobile](http://mobile.free.fr) account.
+library free_mobile;
 
 import 'dart:async';
 import 'dart:convert';
