@@ -1,0 +1,2 @@
+# free-mobile.dart
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d7a6533851d24b4bba5baf8eedff3150)](https://www.codacy.com/app/cedx/free-mobile-dart?utm_source=github.com&utm_medium=referral&utm_content=cedx/free-mobile.dart&utm_campaign=badger)
