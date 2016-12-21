@@ -30,11 +30,11 @@ class Client {
   /// Sends a SMS message to the underlying account, and returns the response body.
   Future<String> sendMessage(String text) async {
     assert(text != null);
-    if (username == null || username.isEmpty) return new Future.error(new ArgumentError('The account username is empty.'));
-    if (password == null || password.isEmpty) return new Future.error(new ArgumentError('The account password is empty.'));
+    if (username == null || username.isEmpty) throw new ArgumentError('The account username is empty.');
+    if (password == null || password.isEmpty) throw new ArgumentError('The account password is empty.');
 
     var message = text.trim();
-    if (message.isEmpty) return new Future.error(new ArgumentError('The specified message is empty.'));
+    if (message.isEmpty) throw new ArgumentError('The specified message is empty.');
 
     var request = new http.Request('GET', endPoint.replace(queryParameters: {
       'msg': message.substring(0, 160),
