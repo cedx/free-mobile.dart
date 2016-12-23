@@ -37,7 +37,7 @@ class Client {
     if (message.isEmpty) throw new ArgumentError('The specified message is empty.');
 
     var request = new http.Request('GET', endPoint.replace(queryParameters: {
-      'msg': message.substring(0, 160),
+      'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
       'user': username
     }));
