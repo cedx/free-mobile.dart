@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:grinder/grinder.dart';
 
 /// Starts the build system.
@@ -10,11 +11,15 @@ void clean() => defaultClean();
 
 /// Sends the results of the code coverage.
 @Task()
-void coverage() {
+void coverage({bool collect = true}) {
+  if (collect) {
+    //Dart.runAsync('test/all.dart', vmArgs: ['--checked', '--enable-vm-service', '--pause-isolates-on-exit']);
+    Process.start('dart', ['--checked', '--enable-vm-service', '--pause-isolates-on-exit', 'test/all.dart'], mode: ProcessStartMode.DETACHED);
+    Pub.run('coverage', script: 'collect_coverage', arguments: ['--out=var/coverage.json', '--resume-isolates']);
+    Pub.run('coverage', script: 'format_coverage', arguments: ['--in=var/coverage.json', '--lcov', '--out=var/coverage.lcov']);
+  }
+
   //var endPoint = Uri.parse('https://coveralls.io/api/v1/jobs');
-  Dart.runAsync('test/all.dart', runOptions: new RunOptions(runInShell: true), vmArgs: ['--checked', '--enable-vm-service', '--pause-isolates-on-exit']);
-  Pub.run('coverage', script: 'collect_coverage', arguments: ['--out=var/coverage.json', '--resume-isolates']);
-  Pub.run('coverage', script: 'format_coverage', arguments: ['--in=var/coverage.json', '--lcov', '--out=var/coverage.lcov']);
 }
 
 /// Builds the documentation.
