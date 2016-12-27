@@ -26,7 +26,7 @@ $ pub get
 ```
 
 ## Usage
-This package provides a single class, `Client`, which allow to send messages to your mobile phone by using the `sendMessage()` method:
+This package provides a single class, [`Client`](https://github.com/cedx/free-mobile.dart/blob/master/lib/src/client.dart), which allow to send messages to your mobile phone by using the `sendMessage()` method:
 
 ```dart
 import 'package:free_mobile/free_mobile.dart';
@@ -79,7 +79,7 @@ $ pub run test
 ```
 
 ## See also
-- [API reference](https://cedx.github.io/free-mobile.dart)
+- [API reference](https://www.dartdocs.org/documentation/free_mobile)
 - [Continuous integration](https://travis-ci.org/cedx/free-mobile.dart)
 
 ## License

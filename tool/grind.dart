@@ -11,8 +11,16 @@ void clean() => defaultClean();
 /// Sends the results of the code coverage.
 @Task()
 void coverage() {
-  // TODO
+
 }
+
+/// Collects the statistics of the code coverage.
+@Task()
+String coverageCollect() => Pub.run('coverage', script: 'collect_coverage', arguments: ['--out=var/coverage.json', '--resume-isolates']);
+
+/// Formats the results of the code coverage.
+@Task()
+String coverageFormat() => Pub.run('coverage', script: 'format_coverage', arguments: ['--in=var/coverage.json', '--lcov', '--out=var/coverage.lcov']);
 
 /// Builds the documentation.
 @Task()

@@ -14,6 +14,5 @@ dependencies:
 
 dev_dependencies:
   coverage: ^0.8.0
-  #dart_coveralls: ^0.4.0
   grinder: ^0.8.0
   test: ^0.12.18
