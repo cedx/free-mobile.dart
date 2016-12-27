@@ -3,9 +3,8 @@ dart: stable
 sudo: false
 
 script:
-- dart --enable-vm-service --pause-isolates-on-exit test/client_test.dart
+- dart --checked --enable-vm-service --pause-isolates-on-exit test/client_test.dart &
 - pub run coverage:collect_coverage --out=var/coverage.json --resume-isolates
-- cat var/coverage.json
 - pub run coverage:format_coverage --in=var/coverage.json --lcov --out=var/coverage.lcov
 - cat var/coverage.lcov
 # - pub run grinder coverage
