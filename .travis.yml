@@ -5,4 +5,4 @@ sudo: false
 # before_script:
 # - pub run coverage:collect_coverage --out=var/coverage.json
 # after_script:
-# - pub run coverage:format_coverage --in=var/coverage.json --lcov --out=coverage.lcov
+# - pub run coverage:format_coverage --in=var/coverage.json --lcov --out=var/coverage.lcov
