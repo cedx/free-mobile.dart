@@ -11,10 +11,9 @@ void clean() => defaultClean();
 
 /// Sends the results of the code coverage.
 @Task()
-void coverage({bool collect = true}) {
+void coverage({bool collect = false}) {
   if (collect) {
-    //Dart.runAsync('test/all.dart', vmArgs: ['--checked', '--enable-vm-service', '--pause-isolates-on-exit']);
-    Process.start('dart', ['--checked', '--enable-vm-service', '--pause-isolates-on-exit', 'test/all.dart'], mode: ProcessStartMode.DETACHED);
+    Dart.runAsync('test/all.dart', vmArgs: ['--checked', '--enable-vm-service', '--pause-isolates-on-exit']);
     Pub.run('coverage', script: 'collect_coverage', arguments: ['--out=var/coverage.json', '--resume-isolates']);
     Pub.run('coverage', script: 'format_coverage', arguments: ['--in=var/coverage.json', '--lcov', '--out=var/coverage.lcov']);
   }
