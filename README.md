@@ -1,5 +1,5 @@
 # Free Mobile for Dart
-![Release](https://img.shields.io/pub/v/free_mobile.svg) ![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg) ![Build](https://img.shields.io/travis/cedx/free_mobile.dart.svg)
+![Release](https://img.shields.io/pub/v/free-mobile.svg) ![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg) ![Coverage](https://coveralls.io/repos/github/cedx/free-mobile.dart/badge.svg) ![Build](https://travis-ci.org/cedx/free-mobile.dart.svg)
 
 Send SMS messages to your [Free Mobile](http://mobile.free.fr) account, in [Dart](https://www.dartlang.org).
 
@@ -29,14 +29,18 @@ $ pub get
 This package provides a single class, `Client`, which allow to send messages to your mobile phone by using the `sendMessage()` method:
 
 ```dart
-try {
-  var client = new Client('<user name>', '<identification key>');
-  await client.sendMessage('Hello World!');
-  print('The message was sent successfully.');
-}
+import 'package:free_mobile/free_mobile.dart';
 
-catch (error) {
-  print('An error occurred: ${error}');
+Future main() async {
+  try {
+    var client = new Client('<user name>', '<identification key>');
+    await client.sendMessage('Hello World!');
+    print('The message was sent successfully.');
+  }
+  
+  catch (Exception error) {
+    print('An error occurred: $error');
+  }
 }
 ```
 
@@ -60,7 +64,7 @@ client.onResponse.listen(
 );
 ```
 
-## Unit Tests
+## Unit tests
 In order to run the tests, you must set two environment variables:
 
 ```shell
@@ -74,9 +78,9 @@ Then, you can run the `test` script from the command prompt:
 $ pub run test
 ```
 
-## See Also
-- [API Reference](https://cedx.github.io/free-mobile.dart)
-- [Continuous Integration](https://travis-ci.org/cedx/free-mobile.dart)
+## See also
+- [API reference](https://cedx.github.io/free-mobile.dart)
+- [Continuous integration](https://travis-ci.org/cedx/free-mobile.dart)
 
 ## License
 [Free Mobile for Dart](https://github.com/cedx/free-mobile.dart) is distributed under the Apache License, version 2.0.
