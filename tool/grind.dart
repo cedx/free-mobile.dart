@@ -11,16 +11,11 @@ void clean() => defaultClean();
 /// Sends the results of the code coverage.
 @Task()
 void coverage() {
-
+  //var endPoint = Uri.parse('https://coveralls.io/api/v1/jobs');
+  Dart.runAsync('test/all.dart', vmArgs: ['--checked', '--enable-vm-service', '--pause-isolates-on-exit']);
+  Pub.run('coverage', script: 'collect_coverage', arguments: ['--out=var/coverage.json', '--resume-isolates']);
+  Pub.run('coverage', script: 'format_coverage', arguments: ['--in=var/coverage.json', '--lcov', '--out=var/coverage.lcov']);
 }
-
-/// Collects the statistics of the code coverage.
-@Task()
-String coverageCollect() => Pub.run('coverage', script: 'collect_coverage', arguments: ['--out=var/coverage.json', '--resume-isolates']);
-
-/// Formats the results of the code coverage.
-@Task()
-String coverageFormat() => Pub.run('coverage', script: 'format_coverage', arguments: ['--in=var/coverage.json', '--lcov', '--out=var/coverage.lcov']);
 
 /// Builds the documentation.
 @Task()
