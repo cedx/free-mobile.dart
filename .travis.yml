@@ -2,11 +2,10 @@ language: dart
 dart: stable
 sudo: false
 
-before_script:
-- dart --enable-vm-service --pause-isolates-on-exit script.dart
+script:
+- dart --enable-vm-service --pause-isolates-on-exit test/client_test.dart
 - pub run coverage:collect_coverage --out=var/coverage.json --resume-isolates
-after_script:
 - cat var/coverage.json
 - pub run coverage:format_coverage --in=var/coverage.json --lcov --out=var/coverage.lcov
-# - pub run grinder coverage
 - cat var/coverage.lcov
+# - pub run grinder coverage
