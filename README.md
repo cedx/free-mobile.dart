@@ -1,5 +1,5 @@
 # Free Mobile for Dart
-![Release](https://img.shields.io/pub/v/free-mobile.svg) ![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg) ![Coverage](https://coveralls.io/repos/github/cedx/free-mobile.dart/badge.svg) ![Build](https://travis-ci.org/cedx/free-mobile.dart.svg)
+![Release](https://img.shields.io/pub/v/free-mobile.svg) ![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg) ![Build](https://travis-ci.org/cedx/free-mobile.dart.svg)
 
 Send SMS messages to your [Free Mobile](http://mobile.free.fr) account, in [Dart](https://www.dartlang.org).
 
@@ -79,7 +79,7 @@ $ pub run test
 ```
 
 ## See also
-- [API reference](https://www.dartdocs.org/documentation/free_mobile)
+- [API reference](https://cedx.github.io/free-mobile.dart)
 - [Continuous integration](https://travis-ci.org/cedx/free-mobile.dart)
 
 ## License

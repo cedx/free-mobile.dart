@@ -3,6 +3,7 @@ version: 0.1.0
 
 author: Cédric Belin <cedric@belin.io>
 description: Send SMS messages to your Free Mobile account.
+documentation: https://cedx.github.io/free-mobile.dart
 homepage: https://github.com/cedx/free-mobile.dart
 
 environment:
