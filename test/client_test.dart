@@ -3,10 +3,7 @@ import 'package:free_mobile/free_mobile.dart';
 import 'package:test/test.dart';
 
 /// Tests the features of the `Client` class.
-void main() => defineTests();
-
-/// Defines the test suites to be run.
-void defineTests() {
+void main() {
   group('.sendMessage()', () {
     test('should not send valid messages with invalid credentials', () {
       expect(new Client().sendMessage('Hello World!'), throwsArgumentError);
