@@ -1,5 +1,5 @@
 # Free Mobile for Dart
-![Release](https://img.shields.io/pub/v/free-mobile.svg) ![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg) ![Build](https://travis-ci.org/cedx/free-mobile.dart.svg)
+![Release](https://img.shields.io/pub/v/free_mobile.svg) ![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg) ![Build](https://travis-ci.org/cedx/free-mobile.dart.svg)
 
 Send SMS messages to your [Free Mobile](http://mobile.free.fr) account, in [Dart](https://www.dartlang.org).
 
@@ -7,6 +7,7 @@ To use this library, you must have enabled SMS Notifications in the Options of y
 
 ## Requirements
 The latest [Dart SDK](https://www.dartlang.org) and [Pub](https://pub.dartlang.org) versions.
+If you plan to play with the sources, you will also need the latest [Grinder](http://google.github.io/grinder.dart) version.
 
 ## Installing via [Pub](https://pub.dartlang.org)
 
@@ -38,7 +39,7 @@ Future main() async {
     print('The message was sent successfully.');
   }
   
-  catch (Exception error) {
+  on Exception catch (error) {
     print('An error occurred: $error');
   }
 }
