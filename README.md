@@ -11,37 +11,40 @@ If you plan to play with the sources, you will also need the latest [Grinder](ht
 
 ## Installing via [Pub](https://pub.dartlang.org)
 
-### Depend on it
-Add this to your package's `pubspec.yaml` file::
+### 1. Depend on it
+Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
   free_mobile: *
 ```
 
-### Install it
-You can install the dependencies from a command prompt:
+### 2. Install it
+Install this package and its dependencies from a command prompt:
 
 ```shell
 $ pub get
+```
+
+### 3. Import it
+Now in your [Dart](https://www.dartlang.org) code, you can use:
+
+```dart
+import 'package:free_mobile/free_mobile.dart';
 ```
 
 ## Usage
 This package provides a single class, [`Client`](https://github.com/cedx/free-mobile.dart/blob/master/lib/src/client.dart), which allow to send messages to your mobile phone by using the `sendMessage()` method:
 
 ```dart
-import 'package:free_mobile/free_mobile.dart';
+try {
+  var client = new Client('<user name>', '<identification key>');
+  await client.sendMessage('Hello World!');
+  print('The message was sent successfully.');
+}
 
-Future main() async {
-  try {
-    var client = new Client('<user name>', '<identification key>');
-    await client.sendMessage('Hello World!');
-    print('The message was sent successfully.');
-  }
-  
-  on Exception catch (error) {
-    print('An error occurred: $error');
-  }
+catch (error) {
+  print('An error occurred: $error');
 }
 ```
 
