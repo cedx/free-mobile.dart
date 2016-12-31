@@ -2,8 +2,8 @@ import 'dart:io';
 import 'package:free_mobile/free_mobile.dart';
 import 'package:test/test.dart';
 
-/// Tests the features of the `Client` class.
-void main() {
+/// Tests the features of the [Client] class.
+void main() => group('Client', () {
   group('.sendMessage()', () {
     test('should not send valid messages with invalid credentials', () {
       expect(new Client().sendMessage('Hello World!'), throwsArgumentError);
@@ -21,12 +21,11 @@ void main() {
   });
 
   group('.toJson()', () {
-    test('should return an object instance with the same public values', () {
+    test('should return a map with the same public values', () {
       var data = new Client('anonymous', 'secret').toJson();
-      expect(data, isMap);
-      expect(data, hasLength(2));
+      expect(data, allOf(isMap, hasLength(2)));
       expect(data['password'], equals('secret'));
       expect(data['username'], equals('anonymous'));
     });
   });
-}
+});
