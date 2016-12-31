@@ -22,10 +22,10 @@ class Client {
   String username;
 
   /// The handler of "request" events.
-  StreamController<http.Request> _onRequest = new StreamController<http.Request>.broadcast();
+  final StreamController<http.Request> _onRequest = new StreamController<http.Request>.broadcast();
 
   /// The handler of "response" events.
-  StreamController<http.Response> _onResponse = new StreamController<http.Response>.broadcast();
+  final StreamController<http.Response> _onResponse = new StreamController<http.Response>.broadcast();
 
   /// Sends a SMS message to the underlying account, and returns the response body.
   Future<String> sendMessage(String text) async {
