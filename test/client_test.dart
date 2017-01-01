@@ -16,7 +16,7 @@ void main() => group('Client', () {
     var password = Platform.environment['FREEMOBILE_PASSWORD'];
     var username = Platform.environment['FREEMOBILE_USERNAME'];
     if (password != null && username != null) test('should send valid messages with valid credentials', () {
-      expect(new Client(username, password).sendMessage('Bonjour Cédric !'), completion(anything));
+      expect(new Client(username, password).sendMessage('Bonjour Cédric !'), completes);
     });
   });
 

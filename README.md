@@ -38,7 +38,7 @@ This package provides a single class, [`Client`](https://github.com/cedx/free-mo
 
 ```dart
 try {
-  var client = new Client('<user name>', '<identification key>');
+  var client = new Client('your user name', 'your identification key');
   await client.sendMessage('Hello World!');
   print('The message was sent successfully.');
 }

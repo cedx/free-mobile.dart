@@ -1,5 +1,6 @@
 language: dart
 dart: stable
-
 sudo: false
-script: pub run grinder coverage
+
+script: pub run grinder test
+after_script: pub run grinder coverage
