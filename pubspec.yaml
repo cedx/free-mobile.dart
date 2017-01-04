@@ -1,5 +1,5 @@
 name: free_mobile
-version: 0.1.0
+version: 0.2.0
 
 author: Cédric Belin <cedric@belin.io>
 description: Send SMS messages to your Free Mobile account.
