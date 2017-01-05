@@ -13,7 +13,6 @@ dependencies:
   http: ^0.11.3
 
 dev_dependencies:
-  coverage: ^0.8.0
   grinder: ^0.8.0
   grinder_coveralls:
     path: C:/repo/grinder-coveralls
