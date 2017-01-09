@@ -30,7 +30,7 @@ $ pub get
 Now in your [Dart](https://www.dartlang.org) code, you can use:
 
 ```dart
-import 'package:free_mobile/free_mobile.dart' as free_mobile;
+import 'package:free_mobile/free_mobile.dart';
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ This package provides a single class, [`Client`](https://github.com/cedx/free-mo
 
 ```dart
 try {
-  var client = new free_mobile.Client('your user name', 'your identification key');
+  var client = new Client('your user name', 'your identification key');
   await client.sendMessage('Hello World!');
   print('The message was sent successfully.');
 }
@@ -53,7 +53,7 @@ The text of the messages will be automatically truncated to 160 characters: you 
 There is also a convenient `sendMessage()` function:
 
 ```dart
-await free_mobile.sendMessage('Hello World!',
+await sendMessage('Hello World!',
   username: 'your user name',
   password: 'your identification key'
 );
