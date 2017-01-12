@@ -9,6 +9,5 @@ import 'package:http/http.dart' as http;
 part 'src/client.dart';
 
 /// Sends a SMS message to a given Free Mobile account, and returns the response body.
-Future<String> sendMessage(String text, {String username, String password}) async {
-  return await new Client(username, password).sendMessage(text);
-}
+Future<String> sendMessage(String text, {String username, String password}) async
+  => new Client(username, password).sendMessage(text);
