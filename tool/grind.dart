@@ -15,7 +15,7 @@ void clean() => defaultClean();
 @Task('Upload the code coverage')
 @Depends(test)
 void coverage() {
-  Dart.run('bin/coveralls.dart', arguments: ['--file=var/lcov.info']);
+  Pub.run('coveralls', arguments: ['--file=var/lcov.info']);
 }
 
 /// Builds the documentation.
