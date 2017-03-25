@@ -50,17 +50,6 @@ catch (error) {
 
 The text of the messages will be automatically truncated to 160 characters: you can't send multipart messages using this library.
 
-There is also a convenient `sendMessage()` function:
-
-```dart
-await sendMessage('Hello World!',
-  username: 'your user name',
-  password: 'your identification key'
-);
-
-print('The message was sent successfully.');
-```
-
 ## Events
 The `Client` class triggers some events during its life cycle:
 
