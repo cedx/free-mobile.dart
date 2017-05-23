@@ -14,9 +14,7 @@ void clean() => defaultClean();
 /// Uploads the code coverage report.
 @Task('Upload the code coverage')
 @Depends(test)
-void coverage() {
-  Pub.run('coveralls', arguments: ['--file=var/lcov.info']);
-}
+String coverage() => Pub.run('coveralls', arguments: const ['--file=var/lcov.info']);
 
 /// Builds the documentation.
 @Task('Build the documentation')
