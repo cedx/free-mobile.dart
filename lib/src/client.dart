@@ -3,8 +3,8 @@ part of free_mobile;
 /// Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account.
 class Client {
 
-  /// The URL of the API end point.
-  static final Uri endPoint = Uri.parse('https://smsapi.free-mobile.fr/sendmsg');
+  /// The URL of the default API end point.
+  static final Uri defaultEndPoint = Uri.parse('https://smsapi.free-mobile.fr');
 
   /// Creates a new client.
   Client([this.username, this.password]);
