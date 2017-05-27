@@ -55,6 +55,7 @@ class Client {
 
   /// Converts this object to a map in JSON format.
   Map<String, String> toJson() => {
+    'endPoint': endPoint.toString(),
     'password': password,
     'username': username
   };
