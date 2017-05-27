@@ -3,6 +3,7 @@ This file contains highlights of what changes on each version of the [Free Mobil
 
 ## Version 2.0.0
 - Breaking change: renamed the `endPoint` constant to `defaultEndPoint`.
+- Added the `endPoint` property.
 
 ## Version 1.0.0
 - Breaking change: raised the required [Dart](https://www.dartlang.org) version.

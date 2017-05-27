@@ -7,13 +7,18 @@ class Client {
   static final Uri defaultEndPoint = Uri.parse('https://smsapi.free-mobile.fr');
 
   /// Creates a new client.
-  Client([this.username, this.password]);
+  Client([this.username, this.password, endPoint]) {
+    if (endPoint != null) this.endPoint = endPoint is Uri ? endPoint : Uri.parse(endPoint.toString());
+  }
 
   /// The stream of "request" events.
   Stream<http.Request> get onRequest => _onRequest.stream;
 
   /// The stream of "response" events.
   Stream<http.Response> get onResponse => _onResponse.stream;
+
+  /// The URL of the API end point.
+  Uri endPoint = defaultEndPoint;
 
   /// The identification key associated to the account.
   String password;
@@ -36,7 +41,7 @@ class Client {
     var message = text.trim();
     if (message.isEmpty) throw new ArgumentError('The specified message is empty.');
 
-    var request = new http.Request('GET', endPoint.replace(queryParameters: {
+    var request = new http.Request('GET', endPoint.replace(path: 'sendmsg', queryParameters: {
       'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
       'user': username
