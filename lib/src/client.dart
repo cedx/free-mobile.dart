@@ -32,7 +32,7 @@ class Client {
   /// The handler of "response" events.
   final StreamController<http.Response> _onResponse = new StreamController<http.Response>.broadcast();
 
-  /// Sends a SMS message to the underlying account, and returns the response body.
+  /// Sends a SMS message to the underlying account.
   Future sendMessage(String text) async {
     assert(text != null);
     if (username == null || username.isEmpty) throw new ArgumentError('The account username is empty.');
