@@ -84,6 +84,7 @@ $ pub run test
 
 ## See also
 - [API reference](https://cedx.github.io/free-mobile.dart)
+- [Code coverage](https://coveralls.io/github/cedx/free-mobile.dart)
 - [Continuous integration](https://travis-ci.org/cedx/free-mobile.dart)
 
 ## License
