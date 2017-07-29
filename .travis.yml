@@ -1,9 +1,10 @@
-language: dart
-dart: stable
+dist: trusty
 sudo: false
-
 notifications:
   email: false
+
+language: dart
+dart: stable
 
 script: pub run grinder test
 after_script: pub run grinder coverage
