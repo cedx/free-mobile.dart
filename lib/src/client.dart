@@ -34,7 +34,6 @@ class Client {
 
   /// Sends a SMS message to the underlying account.
   Future sendMessage(String text) async {
-    assert(text != null);
     if (username == null || username.isEmpty) throw new ArgumentError('The account username is empty.');
     if (password == null || password.isEmpty) throw new ArgumentError('The account password is empty.');
 
