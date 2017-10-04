@@ -43,8 +43,8 @@ try {
   print('The message was sent successfully.');
 }
 
-catch (error) {
-  print('An error occurred: $error');
+on Exception catch (err) {
+  print('An error occurred: $err');
 }
 ```
 
@@ -59,13 +59,8 @@ The `Client` class triggers some events during its life cycle:
 These events are exposed as [`Stream`](https://api.dartlang.org/stable/dart-async/Stream-class.html), you can listen to them using the `on<EventName>` properties:
 
 ```dart
-client.onRequest.listen(
-  (request) => print('Client request: ${request.url}')
-);
-
-client.onResponse.listen(
-  (response) => print('Server response: ${response.statusCode}')
-);
+client.onRequest.listen((request) => print('Client request: ${request.url}'));
+client.onResponse.listen((response) => print('Server response: ${response.statusCode}'));
 ```
 
 ## Unit tests
