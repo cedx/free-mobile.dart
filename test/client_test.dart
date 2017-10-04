@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 void main() => group('Client', () {
   group('.sendMessage()', () {
     test('should not send valid messages with invalid credentials', () {
-      expect(new Client().sendMessage('Hello World!'), throwsArgumentError);
+      expect(new Client('', '').sendMessage('Hello World!'), throwsArgumentError);
     });
 
     test('should not send invalid messages with valid credentials', () {
