@@ -19,29 +19,4 @@ void main() => group('Client', () {
       expect(new Client(username, password).sendMessage('Bonjour Cédric !'), completes);
     });
   });
-
-  group('.toJson()', () {
-    test('should return a map with the same public values', () {
-      var data = new Client('anonymous', 'secret').toJson();
-      expect(data, allOf(isMap, hasLength(3)));
-      expect(data['endPoint'], equals(Client.defaultEndPoint.toString()));
-      expect(data['password'], equals('secret'));
-      expect(data['username'], equals('anonymous'));
-    });
-  });
-
-  group('.toString()', () {
-    var value = new Client('anonymous', 'secret').toString();
-
-    test('should start with the class name', () {
-      expect(value, contains('Client {'));
-    });
-
-    test('should contain the instance properties', () {
-      expect(value, allOf(
-        contains('"password":"secret"'),
-        contains('"username":"anonymous"')
-      ));
-    });
-  });
 });

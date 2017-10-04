@@ -18,7 +18,10 @@ void coverage() => Pub.run('coveralls', arguments: const ['var/lcov.info']);
 
 /// Builds the documentation.
 @Task('Build the documentation')
-void doc() => DartDoc.doc();
+void doc() {
+  delete(getDir('doc/api'));
+  DartDoc.doc();
+}
 
 /// Fixes the coding standards issues.
 @Task('Fix the coding issues')

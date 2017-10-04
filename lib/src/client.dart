@@ -51,15 +51,4 @@ class Client {
     _onResponse.add(response);
     return response.body;
   }
-
-  /// Converts this object to a map in JSON format.
-  Map<String, String> toJson() => {
-    'endPoint': endPoint.toString(),
-    'password': password,
-    'username': username
-  };
-
-  /// Returns a string representation of this object.
-  @override
-  String toString() => '$runtimeType ${JSON.encode(this)}';
 }
