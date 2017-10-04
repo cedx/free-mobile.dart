@@ -1,6 +1,5 @@
-/.c9/
-/.idea/
-/.pub/
+/.*/
+/build/
 /doc/api/
 /var/
 

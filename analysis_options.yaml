@@ -23,7 +23,7 @@ linter:
   - avoid_returning_null
   - avoid_returning_this
   - avoid_setters_without_getters
-  - avoid_slow_async_io
+  # avoid_slow_async_io
   - avoid_types_on_closure_parameters
   - await_only_futures
   - camel_case_types
@@ -39,7 +39,7 @@ linter:
   - empty_statements
   - hash_and_equals
   - implementation_imports
-  - invariant_booleans
+  # invariant_booleans
   - iterable_contains_unrelated_type
   - join_return_with_assignment
   - library_names
@@ -83,7 +83,7 @@ linter:
   - super_goes_last
   - test_types_in_equals
   - throw_in_finally
-  - type_annotate_public_apis
+  # type_annotate_public_apis
   - type_init_formals
   - unawaited_futures
   - unnecessary_brace_in_string_interps
