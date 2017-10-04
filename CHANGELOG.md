@@ -1,7 +1,7 @@
 # Changelog
 This file contains highlights of what changes on each version of the [Free Mobile for Dart](https://github.com/cedx/free-mobile.dart) library.
 
-## Version 3.0.0
+## Version [3.0.0](https://github.com/cedx/free-mobile.dart/compare/v2.0.0...v3.0.0)
 - Breaking change: changed the signature of the constructor.
 - Breaking change: raised the required [Dart](https://www.dartlang.org) version.
 - Breaking change: the class properties are now read-only.
@@ -9,11 +9,11 @@ This file contains highlights of what changes on each version of the [Free Mobil
 - Changed licensing for the [MIT License](https://opensource.org/licenses/MIT).
 - Updated the package dependencies.
 
-## Version 2.0.0
+## Version [2.0.0](https://github.com/cedx/free-mobile.dart/compare/v1.0.0...v2.0.0)
 - Breaking change: renamed the `endPoint` constant to `defaultEndPoint`.
 - Added the `endPoint` property.
 
-## Version 1.0.0
+## Version [1.0.0](https://github.com/cedx/free-mobile.dart/compare/v0.1.0...v1.0.0)
 - Breaking change: raised the required [Dart](https://www.dartlang.org) version.
 - Updated the package dependencies.
 
