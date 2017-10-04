@@ -3,6 +3,7 @@ This file contains highlights of what changes on each version of the [Free Mobil
 
 ## Version 3.0.0
 - Breaking change: raised the required [Dart](https://www.dartlang.org) version.
+- Breaking change: the class properties are now read-only.
 - Changed licensing for the [MIT License](https://opensource.org/licenses/MIT).
 - Updated the package dependencies.
 
