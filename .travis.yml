@@ -3,6 +3,7 @@ language: dart
 sudo: false
 
 dart: stable
+env: DART_ENV="test"
 notifications:
   email: false
 
