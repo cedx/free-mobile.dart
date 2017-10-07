@@ -5,7 +5,7 @@ import 'package:grinder/grinder.dart';
 const List<String> _sources = const ['lib', 'test', 'tool'];
 
 /// Starts the build system.
-Future main(List<String> args) async => grind(args);
+Future main(List<String> args) => grind(args);
 
 /// Deletes all generated files and reset any saved state.
 @Task('Delete the generated files')
