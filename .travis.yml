@@ -1,8 +1,9 @@
 dist: trusty
-language: dart
 sudo: false
 
+language: dart
 dart: stable
+
 env: DART_ENV="test"
 notifications:
   email: false
