@@ -13,8 +13,8 @@ void main() => group('Client', () {
       expect(new Client('anonymous', 'secret').sendMessage(''), throwsArgumentError);
     });
 
-    var password = const String.fromEnvironment('FREEMOBILE_PASSWORD') ?? Platform.environment['FREEMOBILE_PASSWORD'];
-    var username = const String.fromEnvironment('FREEMOBILE_USERNAME') ?? Platform.environment['FREEMOBILE_USERNAME'];
+    var password = const String.fromEnvironment('password') ?? Platform.environment['FREEMOBILE_PASSWORD'];
+    var username = const String.fromEnvironment('username') ?? Platform.environment['FREEMOBILE_USERNAME'];
     if (password != null && username != null) test('should send valid messages with valid credentials', () {
       expect(new Client(username, password).sendMessage('Bonjour Cédric !'), completes);
     });
