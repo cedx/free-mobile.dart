@@ -1,8 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:grinder/grinder.dart';
 
 /// The list of source directories.
-const List<String> _sources = const ['lib', 'test', 'tool'];
+final Iterable<Directory> _sources = sourceDirs.where((dir) => dir.existsSync());
 
 /// Starts the build system.
 Future main(List<String> args) => grind(args);
