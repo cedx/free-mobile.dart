@@ -10,7 +10,10 @@ Future main(List<String> args) => grind(args);
 
 /// Deletes all generated files and reset any saved state.
 @Task('Delete the generated files')
-void clean() => defaultClean();
+void clean() {
+  defaultClean();
+  new FileSet.fromDir(getDir('var'), pattern: '*.{info,json}').files.forEach(delete);
+}
 
 /// Uploads the code coverage report.
 @Task('Upload the code coverage')
