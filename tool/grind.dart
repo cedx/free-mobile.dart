@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:grinder/grinder.dart';
 
 /// Starts the build system.
