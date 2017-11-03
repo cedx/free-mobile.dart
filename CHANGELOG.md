@@ -1,6 +1,9 @@
 # Changelog
 This file contains highlights of what changes on each version of the [Free Mobile for Dart](https://github.com/cedx/free-mobile.dart) library.
 
+## Version [3.1.0](https://github.com/cedx/free-mobile.dart/compare/v3.0.0...v3.1.0)
+- Updated the package dependencies.
+
 ## Version [3.0.0](https://github.com/cedx/free-mobile.dart/compare/v2.0.0...v3.0.0)
 - Breaking change: changed the signature of the constructor.
 - Breaking change: raised the required [Dart](https://www.dartlang.org) version.
