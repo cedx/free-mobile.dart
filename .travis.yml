@@ -2,7 +2,9 @@ dist: trusty
 sudo: false
 
 language: dart
-dart: stable
+dart:
+- stable
+- dev
 
 env: DART_ENV="test"
 notifications:
