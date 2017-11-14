@@ -83,4 +83,4 @@ $ pub run test
 - [Continuous integration](https://travis-ci.org/cedx/free-mobile.dart)
 
 ## License
-[Free Mobile for Dart](https://github.com/cedx/free-mobile.dart) is distributed under the Apache License, version 2.0.
+[Free Mobile for Dart](https://github.com/cedx/free-mobile.dart) is distributed under the MIT License.
