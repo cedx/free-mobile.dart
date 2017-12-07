@@ -45,8 +45,8 @@ class Client {
     }));
 
     _onRequest.add(request);
-    var response = await http.get(request.url);
-    
+    var response = await httpClient.get(request.url);
+
     _onResponse.add(response);
     if ((response.statusCode / 100).truncate() != 2)
       throw new http.ClientException('An error occurred while sending the message.', request.url);

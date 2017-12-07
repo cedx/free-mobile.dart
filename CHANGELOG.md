@@ -1,6 +1,9 @@
 # Changelog
 This file contains highlights of what changes on each version of the [Free Mobile for Dart](https://github.com/cedx/free-mobile.dart) library.
 
+## Version [3.2.0](https://github.com/cedx/free-mobile.dart/compare/v3.1.0...v3.2.0)
+- Added support for browser platform.
+
 ## Version [3.1.0](https://github.com/cedx/free-mobile.dart/compare/v3.0.0...v3.1.0)
 - Updated the package dependencies.
 
