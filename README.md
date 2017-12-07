@@ -17,6 +17,7 @@ Add this to your package's `pubspec.yaml` file:
 ```yaml
 dependencies:
   free_mobile: *
+  http: *
 ```
 
 ### 2. Install it
@@ -31,6 +32,7 @@ Now in your [Dart](https://www.dartlang.org) code, you can use:
 
 ```dart
 import 'package:free_mobile/free_mobile.dart';
+import 'package:http/http.dart' as http;
 ```
 
 ## Usage
@@ -43,12 +45,14 @@ try {
   print('The message was sent successfully.');
 }
 
-on Exception catch (err) {
+on http.ClientException catch (err) {
   print('An error occurred: $err');
 }
 ```
 
-The text of the messages will be automatically truncated to 160 characters: you can't send multipart messages using this library.
+The method returns a [`Future`](https://api.dartlang.org/stable/dart-async/Future-class.html) that completes when the message has been sent. If an error occurred, a [`ClientException`](https://www.dartdocs.org/documentation/http/latest/http/ClientException-class.html) is thrown.
+
+> The text of the messages will be automatically truncated to 160 characters: you can't send multipart messages using this library.
 
 ## Events
 The `Client` class triggers some events during its life cycle:
