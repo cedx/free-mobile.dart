@@ -63,8 +63,13 @@ The `Client` class triggers some events during its life cycle:
 These events are exposed as [`Stream`](https://api.dartlang.org/stable/dart-async/Stream-class.html), you can listen to them using the `on<EventName>` properties:
 
 ```dart
-client.onRequest.listen((request) => print('Client request: ${request.url}'));
-client.onResponse.listen((response) => print('Server response: ${response.statusCode}'));
+client.onRequest.listen(
+  (event) => print('Client request: ${event.request.url}')
+);
+
+client.onResponse.listen(
+  (event) => print('Server response: ${event.response.statusCode}')
+);
 ```
 
 ## Unit tests
