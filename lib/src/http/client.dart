@@ -1,4 +1,4 @@
-part of free_mobile;
+part of free_mobile.http;
 
 /// Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account.
 class Client {
@@ -10,10 +10,10 @@ class Client {
   Client(this.username, this.password, {Uri endPoint}): endPoint = endPoint ?? defaultEndPoint;
 
   /// The stream of "request" events.
-  Stream<http.Request> get onRequest => _onRequest.stream;
+  Stream<RequestEvent> get onRequest => _onRequest.stream;
 
   /// The stream of "response" events.
-  Stream<http.Response> get onResponse => _onResponse.stream;
+  Stream<RequestEvent> get onResponse => _onResponse.stream;
 
   /// The URL of the API end point.
   final Uri endPoint;
@@ -25,10 +25,10 @@ class Client {
   final String username;
 
   /// The handler of "request" events.
-  final StreamController<http.Request> _onRequest = new StreamController<http.Request>.broadcast();
+  final StreamController<RequestEvent> _onRequest = new StreamController<RequestEvent>.broadcast();
 
   /// The handler of "response" events.
-  final StreamController<http.Response> _onResponse = new StreamController<http.Response>.broadcast();
+  final StreamController<RequestEvent> _onResponse = new StreamController<RequestEvent>.broadcast();
 
   /// Sends a SMS message to the underlying account.
   /// Throws an [ArgumentError] if the account credentials are invalid or the specified message is empty.
@@ -44,13 +44,26 @@ class Client {
       'user': username
     }));
 
-    _onRequest.add(request);
+    _onRequest.add(new RequestEvent(request));
     var response = await httpClient.get(request.url);
 
-    _onResponse.add(response);
+    _onResponse.add(new RequestEvent(request, response));
     if ((response.statusCode / 100).truncate() != 2)
       throw new http.ClientException('An error occurred while sending the message.', request.url);
 
     return response.body;
   }
+}
+
+/// The event parameter used for request events.
+class RequestEvent {
+
+  /// Creates a new request event.
+  RequestEvent(this.request, [this.response]);
+
+  /// The client request.
+  final http.Request request;
+
+  /// The server response.
+  final http.Response response;
 }
