@@ -38,6 +38,7 @@ class Client {
     var message = text.trim();
     if (message.isEmpty) throw new ArgumentError('The specified message is empty.');
 
+    var httpClient = newHttpClient();
     var request = new http.Request('GET', endPoint.replace(path: 'sendmsg', queryParameters: {
       'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
@@ -46,8 +47,9 @@ class Client {
 
     _onRequest.add(new RequestEvent(request));
     var response = await httpClient.get(request.url);
-
     _onResponse.add(new RequestEvent(request, response));
+    httpClient.close();
+
     if ((response.statusCode / 100).truncate() != 2)
       throw new http.ClientException('An error occurred while sending the message.', request.url);
 

@@ -6,7 +6,6 @@ dart:
 - stable
 - dev
 
-env: DART_ENV="test"
 notifications:
   email: false
 
