@@ -4,7 +4,8 @@
 - Breaking change: changed the signature of the `Client` events.
 - Breaking change: starting to use and support the [Dart 2 SDK](https://www.dartlang.org/tools/sdk).
 - Breaking change: the `httpClient` property is now private.
-- Added the `RequestEvent` class.
+- Added the `ClientException` and `RequestEvent` classes.
+- Updated the package dependencies.
 
 ## Version [3.2.0](https://github.com/cedx/free-mobile.dart/compare/v3.1.0...v3.2.0)
 - Added support for browser platform.

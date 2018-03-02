@@ -31,7 +31,9 @@ class Client {
   final StreamController<RequestEvent> _onResponse = new StreamController<RequestEvent>.broadcast();
 
   /// Sends a SMS message to the underlying account.
+  ///
   /// Throws an [ArgumentError] if the account credentials are invalid or the specified message is empty.
+  /// Throws a [ClientException] if an error occurred while sending the message.
   Future sendMessage(String text) async {
     if (username.isEmpty || password.isEmpty) throw new ArgumentError('The account credentials are invalid.');
 

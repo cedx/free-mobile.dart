@@ -8,4 +8,7 @@ import 'io.dart'
   if (dart.library.html) 'io/browser.dart'
   if (dart.library.io) 'io/vm.dart';
 
+// ignore: directives_ordering
+export 'package:http/http.dart' show ClientException;
+
 part 'http/client.dart';
