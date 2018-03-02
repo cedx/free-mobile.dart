@@ -8,19 +8,19 @@ Future main(List<String> args) => grind(args);
 @Task('Delete the generated files')
 void clean() {
   defaultClean();
+  ['doc/api', 'web'].map(getDir).forEach(delete);
   new FileSet.fromDir(getDir('var'), pattern: '*.{info,json}').files.forEach(delete);
 }
 
 /// Uploads the code coverage report.
 @Task('Upload the code coverage')
-@Depends(test)
 void coverage() => Pub.run('coveralls', arguments: const ['var/lcov.info']);
 
 /// Builds the documentation.
 @Task('Build the documentation')
 void doc() {
-  delete(getDir('doc/api'));
   DartDoc.doc();
+  run('mkdocs', arguments: const ['build']);
 }
 
 /// Fixes the coding standards issues.

@@ -24,7 +24,7 @@ dependencies:
 Install this package and its dependencies from a command prompt:
 
 ```shell
-$ pub get
+pub get
 ```
 
 ### 3. Import it
@@ -40,9 +40,9 @@ This package provides a single class, [`Client`](https://github.com/cedx/free-mo
 
 ```dart
 try {
-  var client = new Client('your user name', 'your identification key');
+  var client = new Client('your account identifier', 'your API key');
   await client.sendMessage('Hello World!');
-  print('The message was sent successfully.');
+  print('The message was sent successfully');
 }
 
 on http.ClientException catch (err) {
@@ -76,14 +76,14 @@ client.onResponse.listen(
 In order to run the tests, you must set two environment variables:
 
 ```shell
-$ export FREEMOBILE_USERNAME="<your Free Mobile user name>"
-$ export FREEMOBILE_PASSWORD="<your Free Mobile identification key>"
+export FREEMOBILE_USERNAME="<your Free Mobile user name>"
+export FREEMOBILE_PASSWORD="<your Free Mobile identification key>"
 ```
 
 Then, you can run the `test` script from the command prompt:
 
 ```shell
-$ pub run test
+pub run test
 ```
 
 ## See also
