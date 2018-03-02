@@ -1,8 +1,8 @@
 # Changelog
-This file contains highlights of what changes on each version of the [Free Mobile for Dart](https://github.com/cedx/free-mobile.dart) library.
 
 ## Version [4.0.0](https://github.com/cedx/free-mobile.dart/compare/v3.2.0...v4.0.0)
 - Breaking change: changed the signature of the `Client` events.
+- Breaking change: starting to use and support the [Dart 2 SDK](https://www.dartlang.org/tools/sdk).
 - Breaking change: the `httpClient` property is now private.
 - Added the `RequestEvent` class.
 

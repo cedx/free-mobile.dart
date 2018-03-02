@@ -6,13 +6,13 @@ Send SMS messages to your [Free Mobile](http://mobile.free.fr) account, in [Dart
 To use this library, you must have enabled SMS Notifications in the Options of your [Subscriber Area](https://mobile.free.fr/moncompte).
 
 ## Requirements
-The latest [Dart SDK](https://www.dartlang.org) and [Pub](https://pub.dartlang.org) versions.
+The latest [Dart SDK](https://www.dartlang.org/tools/sdk) and [Pub](https://www.dartlang.org/tools/pub) versions.
 If you plan to play with the sources, you will also need the latest [Grinder](http://google.github.io/grinder.dart) version.
 
-## Installing via [Pub](https://pub.dartlang.org)
+## Installing via Pub package manager
 
 ### 1. Depend on it
-Add this to your package's `pubspec.yaml` file:
+Add this to your project's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
