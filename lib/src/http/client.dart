@@ -7,7 +7,10 @@ class Client {
   static final Uri defaultEndPoint = Uri.parse('https://smsapi.free-mobile.fr');
 
   /// Creates a new client.
-  Client(this.username, this.password, {Uri endPoint}): endPoint = endPoint ?? defaultEndPoint;
+  /// Throws an [ArgumentError] if the account credentials are invalid.
+  Client(this.username, this.password, {Uri endPoint}): endPoint = endPoint ?? defaultEndPoint {
+    if (username.isEmpty || password.isEmpty) throw new ArgumentError('The account credentials are invalid');
+  }
 
   /// The stream of "request" events.
   Stream<RequestEvent> get onRequest => _onRequest.stream;
@@ -32,13 +35,11 @@ class Client {
 
   /// Sends a SMS message to the underlying account.
   ///
-  /// Throws an [ArgumentError] if the account credentials are invalid or the specified message is empty.
+  /// Throws an [ArgumentError] if the specified message is empty.
   /// Throws a [ClientException] if an error occurred while sending the message.
   Future sendMessage(String text) async {
-    if (username.isEmpty || password.isEmpty) throw new ArgumentError('The account credentials are invalid.');
-
     var message = text.trim();
-    if (message.isEmpty) throw new ArgumentError('The specified message is empty.');
+    if (message.isEmpty) throw new ArgumentError('The specified message is empty');
 
     var httpClient = newHttpClient();
     var request = new http.Request('GET', endPoint.replace(path: 'sendmsg', queryParameters: <String, String>{
