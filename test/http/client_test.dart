@@ -4,13 +4,19 @@ import 'package:test/test.dart';
 
 /// Tests the features of the [Client] class.
 void main() => group('Client', () {
+  group('constructor', () {
+    test('should throw an error if the credentials are invalid', () {
+      expect(() => new Client('', '').sendMessage('Hello World!'), throwsArgumentError);
+    });
+  });
+
   group('.sendMessage()', () {
-    test('should not send valid messages with invalid credentials', () {
-      expect(new Client('', '').sendMessage('Hello World!'), throwsArgumentError);
+    test('should not send invalid messages', () {
+      expect(() => new Client('anonymous', 'secret').sendMessage(''), throwsArgumentError);
     });
 
-    test('should not send invalid messages with valid credentials', () {
-      expect(new Client('anonymous', 'secret').sendMessage(''), throwsArgumentError);
+    test('should throw a `ClientException` if the API key is invalid', () {
+      expect(() => new Client('anonymous', 'secret').sendMessage('Bonjour Cédric !'), throwsA(const isInstanceOf<ClientException>()));
     });
 
     var password = const String.fromEnvironment('freemobile_password') ?? Platform.environment['FREEMOBILE_PASSWORD'];
