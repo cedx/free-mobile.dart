@@ -4,7 +4,7 @@ part of free_mobile.http;
 class Client {
 
   /// The URL of the default API end point.
-  static final Uri defaultEndPoint = Uri.parse('https://smsapi.free-mobile.fr');
+  static final Uri defaultEndPoint = new Uri.https('smsapi.free-mobile.fr', '/');
 
   /// Creates a new client.
   /// Throws an [ArgumentError] if the account credentials are invalid.
@@ -42,7 +42,7 @@ class Client {
     if (message.isEmpty) throw new ArgumentError('The specified message is empty');
 
     var httpClient = newHttpClient();
-    var request = new http.Request('GET', endPoint.replace(path: 'sendmsg', queryParameters: <String, String>{
+    var request = new http.Request('GET', endPoint.replace(path: '/sendmsg', queryParameters: <String, String>{
       'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
       'user': username
