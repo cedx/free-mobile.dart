@@ -15,8 +15,9 @@ void main() => group('Client', () {
       expect(() => new Client('anonymous', 'secret').sendMessage(''), throwsArgumentError);
     });
 
-    test('should throw a `ClientException` if the API key is invalid', () {
-      expect(() => new Client('anonymous', 'secret').sendMessage('Bonjour Cédric !'), throwsA(const isInstanceOf<ClientException>()));
+    test('should throw a `ClientException` if a network error occurred', () {
+      var client = new Client('anonymous', 'secret', endPoint: new Uri.http('localhost', '/'));
+      expect(() => client.sendMessage('Bonjour Cédric !'), throwsA(const isInstanceOf<ClientException>()));
     });
 
     var password = const String.fromEnvironment('freemobile_password') ?? Platform.environment['FREEMOBILE_PASSWORD'];

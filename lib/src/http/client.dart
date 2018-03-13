@@ -54,7 +54,7 @@ class Client {
     httpClient.close();
 
     if ((response.statusCode / 100).truncate() != 2)
-      throw new http.ClientException('An error occurred while sending the message.', request.url);
+      throw new http.ClientException('An error occurred while sending the message', request.url);
 
     return response.body;
   }
