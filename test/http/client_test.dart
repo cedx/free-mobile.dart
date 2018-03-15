@@ -16,7 +16,7 @@ void main() => group('Client', () {
     });
 
     test('should throw a `ClientException` if a network error occurred', () {
-      var client = new Client('anonymous', 'secret', endPoint: new Uri.http('localhost', '/'));
+      var client = new Client('anonymous', 'secret', endPoint: new Uri.http('127.0.0.1', '/'));
       expect(() => client.sendMessage('Bonjour Cédric !'), throwsA(const isInstanceOf<ClientException>()));
     });
 
