@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [4.0.1](https://github.com/cedx/free-mobile.dart/compare/v4.0.0...v4.0.1)
+- Updated the `test` dependency.
+
 ## Version [4.0.0](https://github.com/cedx/free-mobile.dart/compare/v3.2.0...v4.0.0)
 - Breaking change: changed the signature of the `Client` events.
 - Breaking change: starting to use and support the [Dart 2 SDK](https://www.dartlang.org/tools/sdk).
