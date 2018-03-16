@@ -48,15 +48,25 @@ class Client {
       'user': username
     }));
 
-    _onRequest.add(new RequestEvent(request));
-    var response = await httpClient.get(request.url);
-    _onResponse.add(new RequestEvent(request, response));
-    httpClient.close();
+    try {
+      _onRequest.add(new RequestEvent(request));
+      var response = await httpClient.get(request.url);
+      _onResponse.add(new RequestEvent(request, response));
 
-    if ((response.statusCode / 100).truncate() != 2)
-      throw new http.ClientException('An error occurred while sending the message', request.url);
+      if ((response.statusCode ~/ 100) != 2)
+        throw new http.ClientException('An error occurred while sending the message', request.url);
 
-    return response.body;
+      return response.body;
+    }
+
+    on Exception catch (err) {
+      if (err is http.ClientException) rethrow;
+      throw new http.ClientException(err.toString(), request.url);
+    }
+
+    finally {
+      httpClient.close();
+    }
   }
 }
 
