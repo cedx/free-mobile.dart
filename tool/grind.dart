@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:grinder/grinder.dart';
 
 /// Starts the build system.
-Future main(List<String> args) => grind(args);
+Future<void> main(List<String> args) => grind(args);
 
 /// Deletes all generated files and reset any saved state.
 @Task('Delete the generated files')
@@ -33,7 +33,7 @@ void lint() => Analyzer.analyze(existingSourceDirs);
 
 /// Runs all the test suites.
 @DefaultTask('Run the tests')
-Future test() async {
+Future<void> test() async {
   await Future.wait([
     Dart.runAsync('test/all.dart', vmArgs: const ['--enable-vm-service', '--pause-isolates-on-exit']),
     Pub.runAsync('coverage', script: 'collect_coverage', arguments: const ['--out=var/coverage.json', '--resume-isolates', '--wait-paused'])

@@ -10,7 +10,7 @@ source: src/http/client.dart
 import 'dart:async';
 import 'package:free_mobile/free_mobile.dart';
 
-Future<Null> main() async {
+Future<void> main() async {
   try {
     var client = new Client('your account identifier', 'your API key');
     // For example: new Client('12345678', 'a9BkVohJun4MAf')

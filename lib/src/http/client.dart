@@ -37,7 +37,7 @@ class Client {
   ///
   /// Throws an [ArgumentError] if the specified message is empty.
   /// Throws a [ClientException] if an error occurred while sending the message.
-  Future sendMessage(String text) async {
+  Future<void> sendMessage(String text) async {
     var message = text.trim();
     if (message.isEmpty) throw new ArgumentError('The specified message is empty');
 
