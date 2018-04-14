@@ -13,7 +13,7 @@ dependencies:
   http: ^0.11.3
 
 dev_dependencies:
-  coverage: ^0.10.0
+  coverage: ^0.11.0
   coveralls: ^2.1.0
   grinder: ^0.8.1
-  test: ^0.12.33
+  test: ^0.12.34
