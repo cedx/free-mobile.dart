@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version [4.1.0](https://github.com/cedx/lcov.dart/compare/v4.0.1...v4.1.0)
+- Updated the package dependencies.
 
 ## Version [4.0.1](https://github.com/cedx/free-mobile.dart/compare/v4.0.0...v4.0.1)
 - Fixed the [issue #2](https://github.com/cedx/free-mobile.dart/issues/2): the `Client.sendMessage()` method does not always throws a `ClientException` when an error occurs.
