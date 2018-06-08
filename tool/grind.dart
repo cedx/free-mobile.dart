@@ -42,3 +42,12 @@ Future<void> test() async {
   var args = ['--in=var/coverage.json', '--lcov', '--out=var/lcov.info', '--packages=.packages', '--report-on=${libDir.path}'];
   return Pub.runAsync('coverage', script: 'format_coverage', arguments: args);
 }
+
+/// Upgrades the project to the latest revision.
+@Task('Upgrade the project')
+void upgrade() {
+  run('git', arguments: ['reset', '--hard']);
+  run('git', arguments: ['fetch', '--all', '--prune']);
+  run('git', arguments: ['pull', '--rebase']);
+  Pub.upgrade();
+}
