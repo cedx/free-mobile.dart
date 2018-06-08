@@ -5,7 +5,7 @@
 - [Pub package](https://pub.dartlang.org/packages/free_mobile)
 
 ## Testing
-- [Continuous integration](https://travis-ci.org/cedx/free-mobile.dart)
+- [Continuous integration](https://travis-ci.com/cedx/free-mobile.dart)
 - [Code coverage](https://coveralls.io/github/cedx/free-mobile.dart)
 
 ## Other implementations
