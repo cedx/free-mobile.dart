@@ -7,7 +7,7 @@ documentation: https://dev.belin.io/free-mobile.dart/api
 homepage: https://dev.belin.io/free-mobile.dart
 
 environment:
-  sdk: '>=2.0.0-dev.64 <2.0.0'
+  sdk: '>=2.0.0-dev.67 <2.0.0'
 
 dependencies:
   http: ^0.11.3
