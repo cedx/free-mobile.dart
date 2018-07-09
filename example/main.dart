@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:free_mobile/free_mobile.dart';
 
+/// Sends an SMS notification.
 Future<void> main() async {
   try {
     var client = Client('your account identifier', 'your API key');
