@@ -1,6 +1,7 @@
 # Changelog
 
-## Version [4.1.0](https://github.com/cedx/lcov.dart/compare/v4.0.1...v4.1.0)
+## Version [4.1.0](https://github.com/cedx/free-mobile.dart/compare/v4.0.1...v4.1.0)
+- Added an example code.
 - Raised the [Dart SDK](https://www.dartlang.org/tools/sdk) constraint.
 - Using optional `const` and `new`.
 - Updated the package dependencies.
