@@ -1,4 +1,4 @@
-part of free_mobile.http;
+part of '../http.dart';
 
 /// Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account.
 class Client {
