@@ -38,11 +38,11 @@ class Client {
   /// Throws an [ArgumentError] if the specified message is empty.
   /// Throws a [ClientException] if an error occurred while sending the message.
   Future<void> sendMessage(String text) async {
-    var message = text.trim();
+    final message = text.trim();
     if (message.isEmpty) throw ArgumentError('The specified message is empty');
 
-    var httpClient = newHttpClient();
-    var request = http.Request('GET', endPoint.replace(path: '/sendmsg', queryParameters: <String, String>{
+    final httpClient = newHttpClient();
+    final request = http.Request('GET', endPoint.replace(path: '/sendmsg', queryParameters: <String, String>{
       'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
       'user': username
@@ -50,7 +50,7 @@ class Client {
 
     try {
       _onRequest.add(RequestEvent(request));
-      var response = await httpClient.get(request.url);
+      final response = await httpClient.get(request.url);
       _onResponse.add(RequestEvent(request, response));
 
       if ((response.statusCode ~/ 100) != 2)
