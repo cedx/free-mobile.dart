@@ -3,12 +3,9 @@ part of '../http.dart';
 /// Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account.
 class Client {
 
-  /// The URL of the default API end point.
-  static final Uri defaultEndPoint = Uri.https('smsapi.free-mobile.fr', '/');
-
   /// Creates a new client.
   /// Throws an [ArgumentError] if the account credentials are invalid.
-  Client(this.username, this.password, {Uri endPoint}): endPoint = endPoint ?? defaultEndPoint {
+  Client(this.username, this.password, {Uri endPoint}): endPoint = endPoint ?? Uri.https('smsapi.free-mobile.fr', '/') {
     if (username.isEmpty || password.isEmpty) throw ArgumentError('The account credentials are invalid');
   }
 
