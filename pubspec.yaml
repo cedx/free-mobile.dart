@@ -1,5 +1,5 @@
 name: free_mobile
-version: 4.2.0
+version: 5.0.0
 
 author: Cédric Belin <cedric@belin.io>
 description: Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account.
