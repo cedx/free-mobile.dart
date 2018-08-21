@@ -1,5 +1,5 @@
-path: blob/master/lib
-source: src/http/client.dart
+path: blob/master
+source: lib/src/http/client.dart
 
 # Usage
 
