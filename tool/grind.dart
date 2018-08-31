@@ -4,29 +4,29 @@ import 'package:grinder/grinder.dart';
 /// Starts the build system.
 Future<void> main(List<String> args) => grind(args);
 
-@Task('Delete all generated files and reset any saved state')
+@Task('Deletes all generated files and reset any saved state')
 void clean() {
   defaultClean();
   ['.dart_tool/build', 'doc/api', webDir.path].map(getDir).forEach(delete);
   FileSet.fromDir(getDir('var'), pattern: '*.{info,json}').files.forEach(delete);
 }
 
-@Task('Upload the results of the code coverage')
+@Task('Uploads the results of the code coverage')
 void coverage() => Pub.run('coveralls', arguments: const ['var/lcov.info']);
 
-@Task('Build the documentation')
+@Task('Builds the documentation')
 void doc() {
   DartDoc.doc();
   run('mkdocs', arguments: const ['build']);
 }
 
-@Task('Fix the coding standards issues')
+@Task('Fixes the coding standards issues')
 void fix() => DartFmt.format(existingSourceDirs, lineLength: 200);
 
-@Task('Perform the static analysis of source code')
+@Task('Performs the static analysis of source code')
 void lint() => Analyzer.analyze(existingSourceDirs);
 
-@DefaultTask('Run the test suites')
+@DefaultTask('Runs the test suites')
 Future<void> test() async {
   await Future.wait([
     Dart.runAsync('test/all.dart', vmArgs: const ['--enable-vm-service', '--pause-isolates-on-exit']),
@@ -37,7 +37,7 @@ Future<void> test() async {
   return Pub.runAsync('coverage', script: 'format_coverage', arguments: args);
 }
 
-@Task('Upgrade the project to the latest revision')
+@Task('Upgrades the project to the latest revision')
 void upgrade() {
   run('git', arguments: ['reset', '--hard']);
   run('git', arguments: ['fetch', '--all', '--prune']);
