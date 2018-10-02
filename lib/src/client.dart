@@ -1,4 +1,4 @@
-part of '../http.dart';
+part of '../free_mobile.dart';
 
 /// Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account.
 class Client {
@@ -38,7 +38,7 @@ class Client {
     final message = text.trim();
     if (message.isEmpty) throw ArgumentError('The specified message is empty');
 
-    final httpClient = newHttpClient();
+    final httpClient = http.Client();
     final request = http.Request('GET', endPoint.replace(path: '/sendmsg', queryParameters: <String, String>{
       'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
