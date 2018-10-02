@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [5.1.0](https://github.com/cedx/free-mobile.dart/compare/v5.0.0...v5.1.0)
+- Updated the package dependencies.
+
 ## Version [5.0.0](https://github.com/cedx/free-mobile.dart/compare/v4.2.0...v5.0.0)
 - Breaking change: removed the `Client.defaultEndPoint` static property.
 - Updated the package dependencies.
