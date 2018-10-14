@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [5.2.0](https://github.com/cedx/free-mobile.dart/compare/v5.1.0...v5.2.0)
+- Updated the package dependencies.
+
 ## Version [5.1.0](https://github.com/cedx/free-mobile.dart/compare/v5.0.0...v5.1.0)
 - Updated the package dependencies.
 
