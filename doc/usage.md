@@ -1,5 +1,5 @@
 path: src/branch/master
-source: lib/src/http/client.dart
+source: lib/src/client.dart
 
 # Usage
 
