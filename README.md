@@ -3,11 +3,14 @@
 
 Send SMS messages to your [Free Mobile](http://mobile.free.fr) account, in [Dart](https://www.dartlang.org).
 
-## Resources
-- [Documentation](https://dev.belin.io/free-mobile.dart)
+## Documentation
+- [User guide](https://dev.belin.io/free-mobile.dart)
 - [API reference](https://dev.belin.io/free-mobile.dart/api)
+
+## Development
+- [Git repository](https://git.belin.io/cedx/free-mobile.dart)
 - [Pub package](https://pub.dartlang.org/packages/free_mobile)
-- [GitHub repository](https://github.com/cedx/free-mobile.dart)
+- [Submit an issue](https://git.belin.io/cedx/free-mobile.dart/issues)
 
 ## License
 [Free Mobile for Dart](https://dev.belin.io/free-mobile.dart) is distributed under the MIT License.

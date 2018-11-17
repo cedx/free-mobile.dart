@@ -21,7 +21,7 @@
 - Updated the package dependencies.
 
 ## Version [4.0.1](https://github.com/cedx/free-mobile.dart/compare/v4.0.0...v4.0.1)
-- Fixed the [issue #2](https://github.com/cedx/free-mobile.dart/issues/2): the `Client.sendMessage()` method does not always throws a `ClientException` when an error occurs.
+- Fixed the [GitHub issue #2](https://github.com/cedx/free-mobile.dart/issues/2): the `Client.sendMessage()` method does not always throws a `ClientException` when an error occurs.
 - Updated the `test` dependency.
 
 ## Version [4.0.0](https://github.com/cedx/free-mobile.dart/compare/v3.2.0...v4.0.0)
