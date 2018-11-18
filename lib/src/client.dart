@@ -33,7 +33,7 @@ class Client {
   /// Sends a SMS message to the underlying account.
   ///
   /// Throws an [ArgumentError] if the specified message is empty.
-  /// Throws a [ClientException] if an error occurred while sending the message.
+  /// Throws a [http.ClientException] if an error occurred while sending the message.
   Future<void> sendMessage(String text) async {
     final message = text.trim();
     if (message.isEmpty) throw ArgumentError('The specified message is empty');
