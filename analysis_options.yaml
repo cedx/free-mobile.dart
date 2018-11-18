@@ -1,6 +1,5 @@
 analyzer:
-  exclude:
-  - lib/**.g.dart
+  exclude: [lib/**.g.dart]
 
 linter:
   rules:
