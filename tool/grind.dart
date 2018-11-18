@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:grinder/grinder.dart';
 
 /// Starts the build system.
@@ -17,8 +16,8 @@ void coverage() => Pub.run('coveralls', arguments: const ['var/lcov.info']);
 
 @Task('Builds the documentation')
 Future<void> doc() async {
-  await File('CHANGELOG.md').copy('doc/about/changelog.md');
-  await File('LICENSE.md').copy('doc/about/license.md');
+  await getFile('CHANGELOG.md').copy('doc/about/changelog.md');
+  await getFile('LICENSE.md').copy('doc/about/license.md');
   DartDoc.doc();
   run('mkdocs', arguments: ['build']);
 }
