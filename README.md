@@ -10,7 +10,7 @@ Send SMS messages to your [Free Mobile](http://mobile.free.fr) account, in [Dart
 ## Development
 - [Git repository](https://git.belin.io/cedx/free-mobile.dart)
 - [Pub package](https://pub.dartlang.org/packages/free_mobile)
-- [Submit an issue](https://git.belin.io/cedx/free-mobile.dart/issues)
+- [Submit an issue](https://github.com/cedx/free-mobile.dart/issues)
 
 ## License
 [Free Mobile for Dart](https://dev.belin.io/free-mobile.dart) is distributed under the MIT License.
