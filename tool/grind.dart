@@ -8,7 +8,7 @@ Future<void> main(List<String> args) => grind(args);
 void clean() {
   defaultClean();
   ['.dart_tool/build', 'doc/api', webDir.path].map(getDir).forEach(delete);
-  FileSet.fromDir(getDir('var'), pattern: '*.{info,json}').files.forEach(delete);
+  FileSet.fromDir(getDir('var'), pattern: '!.*', recurse: true).files.forEach(delete);
 }
 
 @Task('Uploads the results of the code coverage')
