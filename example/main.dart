@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:free_mobile/free_mobile.dart';
 
 /// Sends an SMS notification.

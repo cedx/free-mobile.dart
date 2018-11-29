@@ -7,7 +7,6 @@ source: lib/src/client.dart
 **Free Mobile for Dart** provides the `Client` class, which allow to send SMS messages to your mobile phone by using the `sendMessage()` method:
 
 ```dart
-import 'dart:async';
 import 'package:free_mobile/free_mobile.dart';
 
 Future<void> main() async {
