@@ -5,6 +5,8 @@ author: Cédric Belin <cedric@belin.io>
 description: Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account.
 documentation: https://dev.belin.io/free-mobile.dart/api
 homepage: https://dev.belin.io/free-mobile.dart
+issue_tracker: https://github.com/cedx/free-mobile.dart/issues
+repository: https://github.com/cedx/free-mobile.dart
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
