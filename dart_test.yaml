@@ -1,3 +1,2 @@
-platforms:
-- chrome
-- vm
+test_on: vm
+platforms: [chrome, vm]
