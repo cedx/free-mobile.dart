@@ -1,2 +1,1 @@
-test_on: vm
 platforms: [chrome, vm]
