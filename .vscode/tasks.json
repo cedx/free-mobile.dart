@@ -8,6 +8,12 @@
       "type": "shell"
     },
     {
+      "command": "grind coverage",
+      "label": "grinder : coverage",
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
       "command": "grind doc",
       "label": "grinder : doc",
       "problemMatcher": [],
@@ -35,6 +41,12 @@
     {
       "command": "grind upgrade",
       "label": "grinder : upgrade",
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "command": "grind watch",
+      "label": "grinder : watch",
       "problemMatcher": [],
       "type": "shell"
     }
