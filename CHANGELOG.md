@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [6.1.0](https://github.com/cedx/free-mobile.dart/compare/v6.0.0...v6.1.0)
+- Updated the package dependencies.
+- Updated the URL of the Git repository.
+
 ## Version [6.0.0](https://github.com/cedx/free-mobile.dart/compare/v5.2.0...v6.0.0)
 - Breaking change: raised the [Dart SDK](https://www.dartlang.org/tools/sdk) constraint.
 - Updated the package dependencies.
