@@ -44,11 +44,11 @@ These events are exposed as [`Stream`](https://api.dartlang.org/stable/dart-asyn
 
 ```dart
 client.onRequest.listen(
-  (request) => print('Client request: ${request.url}')
+  (event) => print('Client request: ${event.request.url}')
 );
 
 client.onResponse.listen(
-  (response) => print('Server response: ${response.statusCode}')
+  (event) => print('Server response: ${event.response.statusCode}')
 );
 ```
 
