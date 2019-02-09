@@ -10,10 +10,10 @@ class Client {
   }
 
   /// The stream of "request" events.
-  Stream<RequestEvent> get onRequest => _onRequest.stream;
+  Stream<http.Request> get onRequest => _onRequest.stream;
 
   /// The stream of "response" events.
-  Stream<RequestEvent> get onResponse => _onResponse.stream;
+  Stream<http.Response> get onResponse => _onResponse.stream;
 
   /// The URL of the API end point.
   final Uri endPoint;
@@ -25,10 +25,10 @@ class Client {
   final String username;
 
   /// The handler of "request" events.
-  final StreamController<RequestEvent> _onRequest = StreamController<RequestEvent>.broadcast();
+  final StreamController<http.Request> _onRequest = StreamController<http.Request>.broadcast();
 
   /// The handler of "response" events.
-  final StreamController<RequestEvent> _onResponse = StreamController<RequestEvent>.broadcast();
+  final StreamController<http.Response> _onResponse = StreamController<http.Response>.broadcast();
 
   /// Sends a SMS message to the underlying account.
   ///
@@ -46,9 +46,9 @@ class Client {
     }));
 
     try {
-      _onRequest.add(RequestEvent(request));
+      _onRequest.add(request);
       final response = await httpClient.get(request.url);
-      _onResponse.add(RequestEvent(request, response));
+      _onResponse.add(response);
 
       if ((response.statusCode ~/ 100) != 2)
         throw http.ClientException('An error occurred while sending the message', request.url);
@@ -65,17 +65,4 @@ class Client {
       httpClient.close();
     }
   }
-}
-
-/// The event parameter used for request events.
-class RequestEvent {
-
-  /// Creates a new request event.
-  RequestEvent(this.request, [this.response]);
-
-  /// The client request.
-  final http.Request request;
-
-  /// The server response.
-  final http.Response response;
 }
