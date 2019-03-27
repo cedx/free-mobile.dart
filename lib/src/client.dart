@@ -39,7 +39,7 @@ class Client {
     if (message.isEmpty) throw ArgumentError('The specified message is empty');
 
     final httpClient = http.Client();
-    final request = http.Request('GET', endPoint.replace(path: '/sendmsg', queryParameters: <String, String>{
+    final request = http.Request('GET', endPoint.resolve('sendmsg').replace(queryParameters: <String, String>{
       'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
       'user': username
