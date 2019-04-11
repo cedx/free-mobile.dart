@@ -3,8 +3,8 @@ site_description: Send SMS messages to your Free Mobile account, in Dart.
 site_author: Cédric Belin - cedric@belin.io
 site_url: https://dev.belin.io/free-mobile.dart
 
-docs_dir: doc
-site_dir: web
+docs_dir: .
+site_dir: ../web
 
 repo_name: GitHub
 repo_url: https://github.com/cedx/free-mobile.dart
