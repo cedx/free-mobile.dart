@@ -20,10 +20,10 @@ void main() => group('Client', () {
       expect(() => client.sendMessage('Bonjour Cédric !'), throwsA(const TypeMatcher<ClientException>()));
     });
 
-    final password = const String.fromEnvironment('freemobile_password') ?? Platform.environment['FREEMOBILE_PASSWORD'];
-    final username = const String.fromEnvironment('freemobile_username') ?? Platform.environment['FREEMOBILE_USERNAME'];
-    if (password != null && username != null) test('should send valid messages with valid credentials', () {
-      expect(Client(username, password).sendMessage('Bonjour Cédric !'), completes);
-    });
+    test('should send valid messages with valid credentials', () {
+      final password = const String.fromEnvironment('freemobile_password') ?? Platform.environment['FREEMOBILE_PASSWORD'];
+      final username = const String.fromEnvironment('freemobile_username') ?? Platform.environment['FREEMOBILE_USERNAME'];
+      if (password != null && username != null) expect(Client(username, password).sendMessage('Bonjour Cédric !'), completes);
+    }, testOn: 'vm');
   });
 });
