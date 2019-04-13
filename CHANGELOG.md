@@ -1,11 +1,17 @@
 # Changelog
 
+## Version [7.0.0](https://github.com/cedx/free-mobile.dart/compare/v6.1.0...v7.0.0)
+- Breaking change: replaced the `RequestEvent` class by the `http.Request` and `http.Response` classes.
+- Raised the [Dart SDK](https://www.dartlang.org/tools/sdk) constraint.
+- Updated the package dependencies.
+- Updated the URL of the default API endpoint.
+
 ## Version [6.1.0](https://github.com/cedx/free-mobile.dart/compare/v6.0.0...v6.1.0)
 - Updated the package dependencies.
 - Updated the URL of the Git repository.
 
 ## Version [6.0.0](https://github.com/cedx/free-mobile.dart/compare/v5.2.0...v6.0.0)
-- Breaking change: raised the [Dart SDK](https://www.dartlang.org/tools/sdk) constraint.
+- Raised the [Dart SDK](https://www.dartlang.org/tools/sdk) constraint.
 - Updated the package dependencies.
 
 ## Version [5.2.0](https://github.com/cedx/free-mobile.dart/compare/v5.1.0...v5.2.0)
@@ -48,7 +54,7 @@
 
 ## Version [3.0.0](https://github.com/cedx/free-mobile.dart/compare/v2.0.0...v3.0.0)
 - Breaking change: changed the signature of the constructor.
-- Breaking change: raised the required [Dart](https://www.dartlang.org) version.
+- Raised the required [Dart](https://www.dartlang.org) version.
 - Breaking change: the class properties are now read-only.
 - Breaking change: removed the `toJson()` and `toString()` methods.
 - Changed licensing for the [MIT License](https://opensource.org/licenses/MIT).
@@ -59,7 +65,7 @@
 - Added the `endPoint` property.
 
 ## Version [1.0.0](https://github.com/cedx/free-mobile.dart/compare/v0.1.0...v1.0.0)
-- Breaking change: raised the required [Dart](https://www.dartlang.org) version.
+- Raised the required [Dart](https://www.dartlang.org) version.
 - Updated the package dependencies.
 
 ## Version 0.1.0
