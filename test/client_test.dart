@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:free_mobile/free_mobile.dart';
 import 'package:test/test.dart';
 
@@ -21,9 +20,8 @@ void main() => group('Client', () {
     });
 
     test('should send valid messages with valid credentials', () {
-      final password = const String.fromEnvironment('freemobile_password') ?? Platform.environment['FREEMOBILE_PASSWORD'];
-      final username = const String.fromEnvironment('freemobile_username') ?? Platform.environment['FREEMOBILE_USERNAME'];
-      if (password != null && username != null) expect(Client(username, password).sendMessage('Bonjour Cédric !'), completes);
+      final client = Client(const String.fromEnvironment('username'), const String.fromEnvironment('password'));
+      expect(client.sendMessage('Bonjour Cédric !'), completes);
     }, testOn: 'vm');
   });
 });
