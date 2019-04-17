@@ -1,4 +1,6 @@
 platforms: [firefox, vm]
 override_platforms:
   firefox:
-    settings: {arguments: --headless}
+    settings:
+      arguments: --headless
+      executable: {windows: Mozilla\Firefox\firefox.exe}
