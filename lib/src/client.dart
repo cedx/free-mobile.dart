@@ -36,7 +36,7 @@ class Client {
   /// Throws a [http.ClientException] if an error occurred while sending the message.
   Future<void> sendMessage(String text) async {
     final message = text.trim();
-    if (message.isEmpty) throw ArgumentError('The specified message is empty');
+    if (message.isEmpty) throw ArgumentError('The specified message is empty.');
 
     final httpClient = http.Client();
     final request = http.Request('GET', endPoint.resolve('sendmsg').replace(queryParameters: <String, String>{
@@ -51,7 +51,7 @@ class Client {
       _onResponse.add(response);
 
       if ((response.statusCode ~/ 100) != 2)
-        throw http.ClientException('An error occurred while sending the message', request.url);
+        throw http.ClientException('A ${response.statusCode} error occurred: ${response.reasonPhrase}', request.url);
 
       return response.body;
     }

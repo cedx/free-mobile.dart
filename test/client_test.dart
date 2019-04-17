@@ -19,9 +19,10 @@ void main() => group('Client', () {
       expect(() => client.sendMessage('Bonjour Cédric !'), throwsA(const TypeMatcher<ClientException>()));
     });
 
+    const username = String.fromEnvironment('username');
+    const password = String.fromEnvironment('password');
     test('should send valid messages with valid credentials', () {
-      final client = Client(const String.fromEnvironment('username'), const String.fromEnvironment('password'));
-      expect(client.sendMessage('Bonjour Cédric !'), completes);
-    }, testOn: 'vm');
+      expect(Client(username, password).sendMessage('Bonjour Cédric !'), completes);
+    }, skip: username == null || password == null);
   });
 });
