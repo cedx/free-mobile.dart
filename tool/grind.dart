@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 import 'package:grinder/grinder.dart';
 import 'package:grinder_coveralls/grinder_coveralls.dart';
 
@@ -10,8 +8,8 @@ Future<void> main(List<String> args) => grind(args);
 @Task('Deletes all generated files and reset any saved state')
 void clean() {
   defaultClean();
-  ['.dart_tool/build', 'doc/api', webDir.path].map(getDir).forEach(delete);
-  FileSet.fromDir(getDir('var'), pattern: '*.{info,json}', recurse: true).files.forEach(delete);
+  ['.dart_tool', 'doc/api', webDir.path].map(getDir).forEach(delete);
+  ['var/lcov.info'].map(getFile).forEach(delete);
 }
 
 @Task('Uploads the results of the code coverage')
