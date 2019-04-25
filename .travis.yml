@@ -1,5 +1,5 @@
 addons: {firefox: latest}
-dart: [dev, stable]
+dart: dev # TODO [dev, stable]
 dist: xenial
 env: [PLATFORM=browser, PLATFORM=vm]
 language: dart
