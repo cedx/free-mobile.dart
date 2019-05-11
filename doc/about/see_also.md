@@ -2,7 +2,7 @@
 
 ## Development
 - [API reference](https://dev.belin.io/free-mobile.dart/api)
-- [Pub package](https://pub.dartlang.org/packages/free_mobile)
+- [Pub package](https://pub.dev/packages/free_mobile)
 - [Submit an issue](https://github.com/cedx/free-mobile.dart/issues)
 
 ## Testing

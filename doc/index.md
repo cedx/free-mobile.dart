@@ -1,5 +1,5 @@
 # Free Mobile <small>for Dart</small>
-![Runtime](https://img.shields.io/badge/dart-%3E%3D2.2-brightgreen.svg) ![Release](https://img.shields.io/pub/v/free_mobile.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Coverage](https://coveralls.io/repos/github/cedx/free-mobile.dart/badge.svg) ![Build](https://travis-ci.com/cedx/free-mobile.dart.svg)
+![Runtime](https://img.shields.io/badge/dart-%3E%3D2.3-brightgreen.svg) ![Release](https://img.shields.io/pub/v/free_mobile.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Coverage](https://coveralls.io/repos/github/cedx/free-mobile.dart/badge.svg) ![Build](https://travis-ci.com/cedx/free-mobile.dart.svg)
 
 ![Free Mobile](img/free_mobile.png)
 
@@ -28,7 +28,7 @@ dependencies:
   free_mobile: *
 ```
 
-Install the latest version of **Free Mobile for Dart** with [Pub](https://www.dartlang.org/tools/pub):
+Install the latest version of **Free Mobile for Dart** with [Pub](https://dart.dev/tools/pub/cmd):
 
 ```shell
 pub get
