@@ -9,7 +9,7 @@ Future<void> main(List<String> args) => grind(args);
 void clean() {
   defaultClean();
   ['.dart_tool', 'doc/api', webDir.path].map(getDir).forEach(delete);
-  ['var/lcov.info'].map(getFile).forEach(delete);
+  FileSet.fromDir(getDir('var'), pattern: '*.{info,json}', recurse: true).files.forEach(delete);
 }
 
 @Task('Uploads the results of the code coverage')
@@ -36,7 +36,7 @@ void lint() => Analyzer.analyze(existingSourceDirs);
 Future<void> test() async {
   final args = context.invocation.arguments;
   return (args.hasOption('platform') ? args.getOption('platform') : 'vm') == 'browser'
-    ? Pub.runAsync('build_runner', arguments: ['test', '--delete-conflicting-outputs', '--', '--platform=firefox'])
+    ? Pub.runAsync('build_runner', arguments: ['test', '--delete-conflicting-outputs', '--', '--platform=chrome'])
     : collectCoverage(getDir('test'), reportOn: [libDir.path], saveAs: 'var/lcov.info');
 }
 
