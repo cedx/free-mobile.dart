@@ -36,7 +36,7 @@ void lint() => Analyzer.analyze(existingSourceDirs);
 Future<void> test() async {
   final args = context.invocation.arguments;
   return (args.hasOption('platform') ? args.getOption('platform') : 'vm') == 'browser'
-    ? Pub.runAsync('build_runner', arguments: ['test', '--delete-conflicting-outputs', '--', '--platform=chrome'])
+    ? Pub.runAsync('build_runner', arguments: ['test', '--delete-conflicting-outputs', '--', '--platform=firefox'])
     : collectCoverage(getDir('test'), reportOn: [libDir.path], saveAs: 'var/lcov.info');
 }
 

@@ -1,1 +1,4 @@
-platforms: [chrome, vm]
+platforms: [firefox, vm]
+override_platforms:
+  firefox:
+    settings: {arguments: --headless}
