@@ -13,3 +13,4 @@
 /.packages
 /pubspec.lock
 /share/**/*.private.env.json
+/test/**/*.g.dart

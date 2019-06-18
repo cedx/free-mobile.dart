@@ -1,5 +1,6 @@
 import 'package:free_mobile/free_mobile.dart';
 import 'package:test/test.dart';
+import 'config.g.dart' as config;
 
 /// Tests the features of the [Client] class.
 void main() => group('Client', () {
@@ -19,10 +20,9 @@ void main() => group('Client', () {
       expect(() => client.sendMessage('Bonjour Cédric !'), throwsA(const TypeMatcher<ClientException>()));
     });
 
-    const username = String.fromEnvironment('username');
-    const password = String.fromEnvironment('password');
     test('should send valid messages with valid credentials', () {
-      expect(Client(username, password).sendMessage('Bonjour Cédric !'), completes);
-    }, skip: username == null || password == null);
+      final isDartVM = Uri.base.scheme == 'file' && Uri.base.path.endsWith('/');
+      expect(Client(config.username, config.password).sendMessage('Bonjour Cédric, à partir ${isDartVM ? 'de Dart' : 'd\'un navigateur'} !'), completes);
+    });
   });
 });

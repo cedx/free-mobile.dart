@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:io';
+import 'package:code_builder/code_builder.dart';
 import 'package:grinder/grinder.dart';
 import 'package:grinder_coveralls/grinder_coveralls.dart';
 
@@ -9,7 +11,32 @@ Future<void> main(List<String> args) => grind(args);
 void clean() {
   defaultClean();
   ['.dart_tool', 'doc/api', webDir.path].map(getDir).forEach(delete);
+  FileSet.fromDir(getDir('test'), pattern: '*.g.dart', recurse: true).files.forEach(delete);
   FileSet.fromDir(getDir('var'), pattern: '*.{info,json}', recurse: true).files.forEach(delete);
+}
+
+@Task('Builds the application configuration')
+Future<void> config() async {
+  final code = Library((library) => library.body.addAll([
+    Field((field) => field
+      ..docs.add('/// The Free Mobile username.')
+      ..modifier = FieldModifier.constant
+      ..type = const Reference('String')
+      ..name = 'username'
+      ..assignment = ToCodeExpression(literalString(Platform.environment['FREEMOBILE_USERNAME']))
+    ),
+    Field((field) => field
+      ..docs.add('/// The Free Mobile password.')
+      ..modifier = FieldModifier.constant
+      ..type = const Reference('String')
+      ..name = 'password'
+      ..assignment = ToCodeExpression(literalString(Platform.environment['FREEMOBILE_PASSWORD']))
+    )
+  ]));
+
+  final output = getFile('test/config.g.dart');
+  await output.writeAsString(code.accept(DartEmitter()).toString());
+  DartFmt.format(output);
 }
 
 @Task('Uploads the results of the code coverage')
@@ -33,6 +60,7 @@ void fix() => DartFmt.format(existingSourceDirs);
 void lint() => Analyzer.analyze(existingSourceDirs);
 
 @Task('Runs the test suites')
+@Depends(config)
 Future<void> test() async {
   final args = context.invocation.arguments;
   return (args.hasOption('platform') ? args.getOption('platform') : 'vm') == 'browser'
