@@ -4,6 +4,8 @@ import 'config.g.dart' as config;
 
 /// Tests the features of the [Client] class.
 void main() => group('Client', () {
+  final isDartVM = Uri.base.scheme == 'file' && Uri.base.path.endsWith('/');
+
   group('constructor', () {
     test('should throw an error if the credentials are invalid', () {
       expect(() => Client('', '').sendMessage('Hello World!'), throwsArgumentError);
@@ -21,8 +23,8 @@ void main() => group('Client', () {
     });
 
     test('should send valid messages with valid credentials', () {
-      final isDartVM = Uri.base.scheme == 'file' && Uri.base.path.endsWith('/');
-      expect(Client(config.username, config.password).sendMessage('Bonjour Cédric, à partir ${isDartVM ? 'de Dart' : 'd\'un navigateur'} !'), completes);
-    });
+      final message = 'Bonjour Cédric, à partir ${isDartVM ? 'de Dart' : 'd\'un navigateur'} !';
+      expect(Client(config.username, config.password).sendMessage(message), completes);
+    }, skip: !isDartVM);
   });
 });
