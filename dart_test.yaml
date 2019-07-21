@@ -1,7 +1,1 @@
-platforms: [firefox, vm]
-override_platforms:
-  firefox:
-    settings:
-      arguments: -headless
-      executable:
-        windows: Mozilla\Firefox\firefox.exe
+platforms: [chrome, vm]
