@@ -1,11 +1,8 @@
 import 'package:free_mobile/free_mobile.dart';
 import 'package:test/test.dart';
-import 'config.g.dart' as config;
 
 /// Tests the features of the [Client] class.
 void main() => group('Client', () {
-  final isDartVM = Uri.base.scheme == 'file' && Uri.base.path.endsWith('/');
-
   group('constructor', () {
     test('should throw an error if the credentials are invalid', () {
       expect(() => Client('', '').sendMessage('Hello World!'), throwsArgumentError);
@@ -23,8 +20,9 @@ void main() => group('Client', () {
     });
 
     test('should send valid messages with valid credentials', () {
-      final message = 'Bonjour Cédric, à partir ${isDartVM ? 'de Dart' : 'd\'un navigateur'} !';
-      expect(Client(config.username, config.password).sendMessage(message), completes);
-    }, skip: !isDartVM);
+      const username = String.fromEnvironment('username');
+      const password = String.fromEnvironment('password');
+      expect(Client(username, password).sendMessage('Bonjour Cédric, à partir de Dart !'), completes);
+    });
   });
 });
