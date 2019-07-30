@@ -40,10 +40,7 @@ Future<void> config() async {
 }
 
 @Task('Uploads the results of the code coverage')
-Future<void> coverage() async {
-  final report = getFile('var/lcov.info');
-  if (report.existsSync()) return uploadCoverage(await report.readAsString());
-}
+Future<void> coverage() async => uploadCoverage(await getFile('var/lcov.info').readAsString());
 
 @Task('Builds the documentation')
 Future<void> doc() async {
