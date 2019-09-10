@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 import 'package:free_mobile/free_mobile.dart';
 
 /// Sends an SMS notification.
