@@ -12,4 +12,3 @@
 ## Other implementations
 - JavaScript: [Free Mobile for JS](https://dev.belin.io/free-mobile.js)
 - PHP: [Free Mobile for PHP](https://dev.belin.io/free-mobile.php)
-- Yii Framework: [Free Mobile for Yii](https://dev.belin.io/yii2-free-mobile)
