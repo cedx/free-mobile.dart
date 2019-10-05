@@ -25,9 +25,9 @@ Future<void> main() async {
 }
 ```
 
-The `Client#sendMessage()` method returns a [`Future`](https://api.dartlang.org/stable/dart-async/Future-class.html) that completes when the message has been sent.
+The `Client#sendMessage()` method returns a [`Future`](https://api.dart.dev/stable/dart-async/Future-class.html) that completes when the message has been sent.
 
-The future completes with an [`ArgumentError`](https://api.dartlang.org/stable/dart-core/ArgumentError-class.html)
+The future completes with an [`ArgumentError`](https://api.dart.dev/stable/dart-core/ArgumentError-class.html)
 if the specified message is empty. It completes with a `ClientException` if any error occurred while sending the message.
 
 !!! warning
@@ -40,7 +40,7 @@ The `Client` class triggers some events during its life cycle:
 - `request` : emitted every time a request is made to the remote service.
 - `response` : emitted every time a response is received from the remote service.
 
-These events are exposed as [`Stream`](https://api.dartlang.org/stable/dart-async/Stream-class.html), you can listen to them using the `on<EventName>` properties:
+These events are exposed as [`Stream`](https://api.dart.dev/stable/dart-async/Stream-class.html), you can listen to them using the `on<EventName>` properties:
 
 ```dart
 client.onRequest.listen(
