@@ -9,7 +9,7 @@ issue_tracker: https://github.com/cedx/free-mobile.dart/issues
 repository: https://github.com/cedx/free-mobile.dart
 
 environment:
-  sdk: '>=2.5.0 <3.0.0'
+  sdk: '>=2.6.0 <3.0.0'
 
 dependencies:
   http: ^0.12.0
