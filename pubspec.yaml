@@ -1,7 +1,6 @@
 name: free_mobile
 version: 7.1.0
 
-author: Cédric Belin <cedric@belin.io>
 description: Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account.
 documentation: https://dev.belin.io/free-mobile.dart/api
 homepage: https://dev.belin.io/free-mobile.dart
