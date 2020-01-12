@@ -28,7 +28,7 @@ dependencies:
   free_mobile: *
 ```
 
-Install the latest version of **Free Mobile for Dart** with [Pub](https://dart.dev/tools/pub/cmd):
+Install the latest version of **Free Mobile for Dart** with [Pub](https://dart.dev/tools/pub):
 
 ```shell
 pub get
