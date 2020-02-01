@@ -27,8 +27,7 @@ Future<void> main() async {
 
 The `Client#sendMessage()` method returns a [`Future`](https://api.dart.dev/stable/dart-async/Future-class.html) that completes when the message has been sent.
 
-The future completes with an [`ArgumentError`](https://api.dart.dev/stable/dart-core/ArgumentError-class.html)
-if the specified message is empty. It completes with a `ClientException` if any error occurred while sending the message.
+It completes with a `ClientException` if any error occurred while sending the message.
 
 !!! warning
     The text of the messages will be automatically truncated to **160** characters:  
