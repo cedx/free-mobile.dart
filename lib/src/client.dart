@@ -4,10 +4,10 @@ part of '../free_mobile.dart';
 class Client {
 
   /// Creates a new client.
-  /// Throws an [ArgumentError] if the account credentials are invalid.
-  Client(this.username, this.password, {Uri endPoint}): endPoint = endPoint ?? Uri.https('smsapi.free-mobile.fr', '/') {
-    if (username.isEmpty || password.isEmpty) throw ArgumentError('The account credentials are invalid');
-  }
+  Client(this.username, this.password, {Uri endPoint}):
+    assert(username.isNotEmpty),
+    assert(password.isNotEmpty),
+    endPoint = endPoint ?? Uri.https('smsapi.free-mobile.fr', '/');
 
   /// The stream of "request" events.
   Stream<http.Request> get onRequest => _onRequest.stream;
@@ -35,10 +35,10 @@ class Client {
   /// Throws an [ArgumentError] if the specified message is empty.
   /// Throws a [http.ClientException] if an error occurred while sending the message.
   Future<void> sendMessage(String text) async {
-    final message = text.trim();
-    if (message.isEmpty) throw ArgumentError('The specified message is empty.');
+    assert(text.isNotEmpty);
 
     final httpClient = http.Client();
+    final message = text.trim();
     final request = http.Request('GET', endPoint.resolve('sendmsg').replace(queryParameters: <String, String>{
       'msg': message.substring(0, math.min(message.length, 160)),
       'pass': password,
