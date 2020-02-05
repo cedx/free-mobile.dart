@@ -31,8 +31,6 @@ class Client {
   final StreamController<http.Response> _onResponse = StreamController<http.Response>.broadcast();
 
   /// Sends a SMS message to the underlying account.
-  ///
-  /// Throws an [ArgumentError] if the specified message is empty.
   /// Throws a [http.ClientException] if an error occurred while sending the message.
   Future<void> sendMessage(String text) async {
     assert(text.isNotEmpty);
