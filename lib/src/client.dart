@@ -48,9 +48,7 @@ class Client {
       final response = await httpClient.get(request.url);
       _onResponse.add(response);
 
-      if ((response.statusCode ~/ 100) != 2)
-        throw http.ClientException('A ${response.statusCode} error occurred: ${response.reasonPhrase}', request.url);
-
+      if ((response.statusCode ~/ 100) != 2) throw http.ClientException(response.body, request.url);
       return response.body;
     }
 
