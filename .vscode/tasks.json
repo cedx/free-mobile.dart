@@ -49,12 +49,6 @@
       "label": "grind: upgrade",
       "problemMatcher": [],
       "type": "shell"
-    },
-    {
-      "command": "grind watch",
-      "label": "grind: watch",
-      "problemMatcher": [],
-      "type": "shell"
     }
   ]
 }

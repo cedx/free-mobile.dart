@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:free_mobile/free_mobile.dart';
 import 'package:test/test.dart';
 
@@ -10,8 +11,8 @@ void main() => group('Client', () {
     });
 
     test('should send SMS messages if credentials are valid', () {
-      const username = String.fromEnvironment('username');
-      const password = String.fromEnvironment('password');
+      final username = Platform.environment['FREEMOBILE_USERNAME'];
+      final password = Platform.environment['FREEMOBILE_PASSWORD'];
       expect(Client(username, password).sendMessage('Bonjour Cédric, à partir de Dart !'), completes);
     });
   });
