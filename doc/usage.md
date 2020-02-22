@@ -25,7 +25,7 @@ Future<void> main() async {
 }
 ```
 
-The `Client#sendMessage()` method returns a [`Future`](https://api.dart.dev/stable/dart-async/Future-class.html) that completes when the message has been sent.
+The `Client.sendMessage()` method returns a [`Future`](https://api.dart.dev/stable/dart-async/Future-class.html) that completes when the message has been sent.
 
 It completes with a `ClientException` if any error occurred while sending the message.
 
