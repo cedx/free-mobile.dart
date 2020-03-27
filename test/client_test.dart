@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 void main() => group('Client', () {
   group('.sendMessage()', () {
     test('should throw a `ClientException` if a network error occurred', () {
-      final client = Client('anonymous', 'secret', endPoint: Uri.http('localhost', '/'));
+      final client = Client('anonymous', 'secret', endPoint: Uri.http('localhost:10000', '/'));
       expect(() => client.sendMessage('Bonjour Cédric !'), throwsA(const TypeMatcher<ClientException>()));
     });
 
