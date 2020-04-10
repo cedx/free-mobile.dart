@@ -7,7 +7,7 @@ Future<void> main(List<String> args) => grind(args);
 void clean() {
   defaultClean();
   delete(getFile('var/lcov.info'));
-  ['.dart_tool/build', 'var/test', webDir.path].map(getDir).forEach(delete);
+  ['.dart_tool/build', 'var/test', 'www'].map(getDir).forEach(delete);
 }
 
 @Task('Uploads the results of the code coverage')
@@ -21,7 +21,7 @@ void coverage() {
 Future<void> doc() async {
   for (final path in ['CHANGELOG.md', 'LICENSE.md']) await getFile(path).copy('doc/about/${path.toLowerCase()}');
   run('mkdocs', arguments: ['build', '--config-file=doc/mkdocs.yaml']);
-  ['doc/about/changelog.md', 'doc/about/license.md', '${webDir.path}/mkdocs.yaml'].map(getFile).forEach(delete);
+  ['doc/about/changelog.md', 'doc/about/license.md', 'www/mkdocs.yaml'].map(getFile).forEach(delete);
 }
 
 @Task('Fixes the coding standards issues')
