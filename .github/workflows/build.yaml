@@ -22,9 +22,11 @@ jobs:
         env:
           FREEMOBILE_PASSWORD: ${{secrets.FREEMOBILE_PASSWORD}}
           FREEMOBILE_USERNAME: ${{secrets.FREEMOBILE_USERNAME}}
-        run: pub run grinder test
+        run: pub run test --coverage=var
       - name: Collect code coverage
         env:
           COVERALLS_REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: success()
-        run: pub run grinder coverage
+        run: |
+          pub run coverage:format_coverage --in=var/test --lcov --out=var/lcov.info --packages=.dart_tool/package_config.json --report-on=lib
+          pub run coveralls var/lcov.info
