@@ -1,7 +1,7 @@
 # See also
 
 ## Development
-- [API reference](https://pub.dev/documentation/free_mobile)
+- [API reference](https://api.belin.io/free-mobile.dart)
 - [Pub package](https://pub.dev/packages/free_mobile)
 - [Submit an issue](https://git.belin.io/cedx/free-mobile.dart/issues)
 

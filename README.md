@@ -5,7 +5,7 @@ Send SMS messages to your [Free Mobile](http://mobile.free.fr) account, in [Dart
 
 ## Documentation
 - [User guide](https://docs.belin.io/free-mobile.dart)
-- [API reference](https://pub.dev/documentation/free_mobile)
+- [API reference](https://api.belin.io/free-mobile.dart)
 
 ## Development
 - [Git repository](https://git.belin.io/cedx/free-mobile.dart)
