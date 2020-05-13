@@ -1,5 +1,5 @@
 # Free Mobile <small>for Dart</small>
-![Runtime](https://img.shields.io/badge/dart-%3E%3D2.8-brightgreen.svg) ![Release](https://img.shields.io/pub/v/free_mobile.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Coverage](https://coveralls.io/repos/github/cedx/free-mobile.dart/badge.svg) ![Build](https://github.com/cedx/free-mobile.dart/workflows/build/badge.svg)
+![Runtime](https://badgen.net/badge/dart/%3E%3D2.8/green) ![Release](https://img.shields.io/pub/v/free_mobile.svg) ![License](https://badgen.net/badge/license/MIT/blue) ![Coverage](https://badgen.net/coveralls/c/github/cedx/free-mobile.dart) ![Build](https://badgen.net/github/checks/cedx/free-mobile.dart)
 
 ![Free Mobile](img/free_mobile.png)
 
