@@ -8,7 +8,3 @@
 ## Testing
 - [Continuous integration](https://github.com/cedx/free-mobile.dart/actions)
 - [Code coverage](https://coveralls.io/github/cedx/free-mobile.dart)
-
-## Other implementations
-- JavaScript: [Free Mobile for JS](https://docs.belin.io/free-mobile.js)
-- PHP: [Free Mobile for PHP](https://docs.belin.io/free-mobile.php)
