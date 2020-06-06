@@ -13,6 +13,6 @@ dependencies:
   http: ^0.12.1
 
 dev_dependencies:
-  coverage: ^0.13.9
-  coveralls: ^5.8.0
-  test: ^1.14.6
+  coverage: ^0.14.0
+  coveralls: ^5.9.0
+  test: ^1.14.7
