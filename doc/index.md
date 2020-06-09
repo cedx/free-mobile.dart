@@ -6,7 +6,7 @@
 ## Send SMS messages to your Free Mobile account
 Send notifications to your own mobile device via any internet-connected device.
 
-For example, you can configure a control panel or a network-attached storage to your home so that they send an SMS to your [Free Mobile](http://mobile.free.fr) phone when an event occurs.
+For example, you can configure a control panel or a network-attached storage to your home so that they send an SMS to your [Free Mobile](https://mobile.free.fr) phone when an event occurs.
 
 ## Quick start
 
@@ -16,7 +16,7 @@ For example, you can configure a control panel or a network-attached storage to 
 
 ### Get an API key
 You first need to enable the **SMS notifications** in [your subscriber account](https://mobile.free.fr/moncompte).
-This will give you an identification key allowing access to the [Free Mobile](http://mobile.free.fr) API.
+This will give you an identification key allowing access to the [Free Mobile](https://mobile.free.fr) API.
 
 ![SMS notifications](img/sms_notifications.jpg)  
 

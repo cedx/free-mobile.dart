@@ -1,6 +1,6 @@
 part of "../free_mobile.dart";
 
-/// Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account.
+/// Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account.
 class Client {
 
 	/// Creates a new client.
