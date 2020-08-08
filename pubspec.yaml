@@ -14,5 +14,5 @@ dependencies:
 
 dev_dependencies:
   coverage: ^0.14.0
-  coveralls: ^5.9.0
+  coveralls: ^5.10.0
   test: ^1.15.3
