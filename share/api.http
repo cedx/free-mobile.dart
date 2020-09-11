@@ -1,6 +1,6 @@
 @baseUrl = https://smsapi.free-mobile.fr
-@password =
-@username =
+@password = <your-password>
+@username = <your-username>
 
 ###
 
