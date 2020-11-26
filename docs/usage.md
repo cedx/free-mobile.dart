@@ -8,7 +8,7 @@ import "package:free_mobile/free_mobile.dart";
 
 Future<void> main() async {
 	try {
-		var client = Client("your account identifier", "your API key");
+		final client = Client("your account identifier", "your API key");
 		// For example: Client("12345678", "a9BkVohJun4MAf")
 	
 		await client.sendMessage("Hello World!");
@@ -22,7 +22,7 @@ Future<void> main() async {
 }
 ```
 
-The `Client.sendMessage()` method returns a [`Future`](https://api.dart.dev/stable/dart-async/Future-class.html) that completes when the message has been sent.
+The `Client.sendMessage()` method returns a `Future` that completes when the message has been sent.
 
 It completes with a `ClientException` if any error occurred while sending the message.
 
@@ -34,7 +34,7 @@ The `Client` class triggers some events during its life cycle:
 - `request` : emitted every time a request is made to the remote service.
 - `response` : emitted every time a response is received from the remote service.
 
-These events are exposed as [`Stream`](https://api.dart.dev/stable/dart-async/Stream-class.html), you can listen to them using the `on<EventName>` properties:
+These events are exposed as `Stream`, you can listen to them using the `on<EventName>` properties:
 
 ```dart
 client.onRequest.listen(

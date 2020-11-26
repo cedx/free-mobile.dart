@@ -1,12 +1,9 @@
 # Free Mobile <small>for Dart</small>
 ![Runtime](https://badgen.net/pub/sdk-version/free_mobile) ![Release](https://badgen.net/pub/v/free_mobile) ![License](https://badgen.net/pub/license/free_mobile) ![Likes](https://badgen.net/pub/likes/free_mobile) ![Coverage](https://badgen.net/coveralls/c/github/cedx/free-mobile.dart) ![Build](https://badgen.net/github/checks/cedx/free-mobile.dart/main)
 
-![Free Mobile](img/free_mobile.png)
-
 ## Send SMS messages to your Free Mobile account
-Send notifications to your own mobile device via any internet-connected device.
-
-For example, you can configure a control panel or a network-attached storage to your home so that they send an SMS to your [Free Mobile](https://mobile.free.fr) phone when an event occurs.
+> Send notifications to your own mobile device via any internet-connected device.  
+> For example, you can configure a control panel or a network-attached storage to your home so that they send an SMS to your [Free Mobile](https://mobile.free.fr) phone when an event occurs.
 
 ## Quick start
 !> SMS notifications require an API key. If you are not already registered, [sign up for a Free Mobile account](https://mobile.free.fr/subscribe).
