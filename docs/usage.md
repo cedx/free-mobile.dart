@@ -1,14 +1,9 @@
----
-path: src/branch/main
-source: lib/src/client.dart
----
-
 # Usage
 
 ## SMS notifications
 **Free Mobile for Dart** provides the `Client` class, which allow to send SMS messages to your mobile phone by using the `sendMessage()` method:
 
-``` dart
+```dart
 import "package:free_mobile/free_mobile.dart";
 
 Future<void> main() async {
@@ -31,9 +26,7 @@ The `Client.sendMessage()` method returns a [`Future`](https://api.dart.dev/stab
 
 It completes with a `ClientException` if any error occurred while sending the message.
 
-!!! warning
-	The text of the messages will be automatically truncated to **160** characters:  
-	you can't send multipart messages using this library.
+!> The text of the messages will be automatically truncated to **160** characters: you can't send multipart messages using this library.
 
 ## Client events
 The `Client` class triggers some events during its life cycle:
@@ -43,7 +36,7 @@ The `Client` class triggers some events during its life cycle:
 
 These events are exposed as [`Stream`](https://api.dart.dev/stable/dart-async/Stream-class.html), you can listen to them using the `on<EventName>` properties:
 
-``` dart
+```dart
 client.onRequest.listen(
 	(request) => print("Client request: ${request.url}")
 );
