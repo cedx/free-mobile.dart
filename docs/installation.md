@@ -36,3 +36,5 @@ Now in your [Dart](https://dart.dev) code, you can use:
 ```dart
 import "package:free_mobile/free_mobile.dart";
 ```
+
+See the [usage information](usage/api.md).
