@@ -1,7 +1,9 @@
 # Free Mobile for Dart
 ![Runtime](https://badgen.net/pub/sdk-version/free_mobile) ![Release](https://badgen.net/pub/v/free_mobile) ![License](https://badgen.net/pub/license/free_mobile) ![Likes](https://badgen.net/pub/likes/free_mobile) ![Coverage](https://badgen.net/coveralls/c/github/cedx/free-mobile.dart) ![Build](https://badgen.net/github/checks/cedx/free-mobile.dart/main)
 
-> Send SMS messages to your [Free Mobile](https://mobile.free.fr) account, in [Dart](https://dart.dev).
+Send SMS messages to your [Free Mobile](https://mobile.free.fr) account, in [Dart](https://dart.dev).
+
+> WARNING: this package is **abandoned** and no longer maintained.
 
 ## Documentation
 - [User guide](https://cedx.github.io/free-mobile.dart)
